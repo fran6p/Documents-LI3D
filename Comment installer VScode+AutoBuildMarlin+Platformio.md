@@ -45,7 +45,11 @@ Une fois ces installations réussies, après un nouveau rechargement, Auto Build
 ![image](./images/Marlin-zip-décompressé.jpg)
 
 
-- Il est recommandé de récupérer les exemples de configuration d'imprimantes proposés par l'équipe du Marlin. De nombreux constructeurs et modèles d'imprimantes y sont listés
+- Il est recommandé de récupérer les exemples de configuration d'imprimantes proposés par l'équipe du Marlin.
+
+![image](./images/marlin-configurations.jpg)
+
+- Une fois cette archive décompressée, le dossier config/examples contient de nombreux constructeurs et modèles d'imprimantes
 
 ![image](./images/marlin-configurations-exemples.jpg)
 
