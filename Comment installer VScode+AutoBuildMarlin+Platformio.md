@@ -28,10 +28,33 @@ Après installation de ces extensions, il faudra probablement effectuer un recha
 
 ![image](./images/VSC-ext-reload.jpg)
 
-Une fois ces installations réussies, après un nouveau rechargement, Auto Build Marlin et PlatformIO sont installés.
+Une fois ces installations réussies, après un nouveau rechargement, Auto Build Marlin et PlatformIO sont installés et apparaissent dans la liste des extensions (plugins) dans la partie gauche de VSCode.
 
 ![image](./images/VSC-icones-extensions.jpg)
 
-- Dans la partie gauche de VSCode, vous pouvez voir qu'il y a deux autres icônes, comme sur l'image(①). Un clic sur l'icône du plugin PlatformIO (une tête de fourmi voire pour certains un «alien») pour le sélectionner, puis un dernier clic sur ② Ouvrir un projet (Open Project) pour ouvrir le projet et pouvoir commencer à travailer avec.
+- Un clic sur l'icône du plugin PlatformIO (①) (une tête de fourmi voire pour certains un «alien») pour le sélectionner, puis un dernier clic sur ② Ouvrir un projet (Open Project) pour ouvrir le projet et pouvoir commencer à travailler avec.
 
 ![image](./images/VSC-Platformio-ouvrir-projet.jpg)
+
+- Pour compiler un Marlin, il faut au préalable avoir récupérer les sources fournies sous forme d'une archvie compressée
+
+![image](./images/Marlin-code-zip.jpg)
+
+- Décompresser l'archive récupérée à l'issue du téléchargement, un dossier Marlin-2.0.x doit avoir été créé. C'est cedossier qu'il faut indiquer lors de l'ouverture du projet via Platformio (le fichier platformio.ini doit y être ainsi qu'un dossier Marlin qui contient les fichiers sources qui serviront lors de la compilation
+
+![image](./images/Marlin-zip-décompressé.jpg)
+
+
+- Il est recommandé de récupérer les exemples de configuration d'imprimantes proposés par l'équipe du Marlin. De nombreux constructeurs et modèles d'imprimantes sont listés
+
+![image](./images/marlin-configurations-exemples.jpg)
+
+Exemples du fabricant Creality :
+
+![image](./images/marlin-configurations-exemples-creality.jpg)
+
+Pour une Creality Ender3, il n'y a que l'embarras du choix en fonction de la carte mère installée sur l'imprimante. Il suffira de recopier les fichiers configuration[_adv].h et éventuellement les [boot|status]screen.h dans le dossier nommé Marlin en remplacement de ceux originaux 
+
+![image](./images/marlin-configurations-exemples-creality-ender3.jpg)
+
+Bonne(s) compilation(s)
