@@ -16,7 +16,7 @@ Le choix dépend du système d'opérations (OS) de l'ordinateur (Windows (7, 8, 
   Après téléchargement, un double-clic pour lancer l'installation de VSC. Après installation, ouvrir VSCode.
 - Il faudra ensuite installer l'extension «Auto Build Marlin», clic sur le ① indiqué dans l'image ci-dessous, saisir Auto Build Marlin (ABM) dans ② puis cliquer ③ Installer pour finaliser l'installation.
 
-![image](./images/VS-ext-ABM.jpg)
+![image](./images/VSC-ext-ABM.jpg)
 
 Normalement, l'installation de «ABM» devrait avoir également installé en dépendance Platformio IDE. Si ce n'était pas le cas :
 
