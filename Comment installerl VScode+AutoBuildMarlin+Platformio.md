@@ -1,6 +1,7 @@
-### installer Git bash
+### Installer Git bash
 - Télécharger et installer la version actuelle [Git](https://git-scm.com/downloads) d'abord.
 ![image](https://user-images.githubusercontent.com/25599056/61577177-58dcb400-ab16-11e9-8167-a14fba8e2c0c.png)
+
 ### Comment installer VSC et Auto Build Marlin + Platformio IDE pour compiler
 
 - Télécharger VSCode à partir de [ici](https://code.visualstudio.com/Download)
