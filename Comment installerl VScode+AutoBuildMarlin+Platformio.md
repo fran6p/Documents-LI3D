@@ -1,6 +1,6 @@
 ### Installer Git bash
 - Télécharger et installer la version actuelle de [Git](https://git-scm.com/downloads) en fonction de votre OS (Windows, Linux, Mac)
-![image](https://user-images.githubusercontent.com/25599056/61577177-58dcb400-ab16-11e9-8167-a14fba8e2c0c.png)
+![image](./images/download-git.jpg)
 
 ### Installer Python
 - Télécharger et installer la version actuelle de [Python](https://www.python.org/downloads/) en fonction de votre OS (Windows, Linux, Mac)
