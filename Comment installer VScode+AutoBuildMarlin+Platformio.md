@@ -9,7 +9,7 @@
 ### Comment installer VSC et Auto Build Marlin + Platformio IDE pour compiler
 
 - Télécharger Visual Studio Code (VSC) à partir d'[ici](https://code.visualstudio.com/Download)
-Le choix dépend du système d'opérations (OS) de l'ordinateur (Windows (7, 8, 10) / Linux / Mac) et de l'architecture (32 / 64bits).
+Le choix dépend du système d'exploitation (OS) de l'ordinateur (Windows (7, 8, 10) / Linux / Mac) et de l'architecture (32 / 64bits).
 
 ![image](./images/download-VSC.jpg)
 
