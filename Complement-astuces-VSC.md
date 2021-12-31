@@ -39,3 +39,7 @@ Pendant que la compilation se réalise :
 
 ![image](./images/VSC/ABM-compilation-en-cours.jpg)
 
+2) Une fois la compilation terminée, si l'imprimante est connectée à l'ordinateur, téléverser le firmware (clic sur «Upload»). Attention, même remarque que pour Platformio (plus haut) :
+
+![image](./images/VSC/ABM-televerser-carte-mere.jpg)
+
