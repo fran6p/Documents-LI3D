@@ -142,7 +142,7 @@ Les modifications seront automatiquement détectées dans GD 😉
 
 ![image](./images/GD/GD-modifications-detectees.jpg) 
 
-* le contenu des modifications est précisé (history), rouge / vert avant / après modifications :
+* le contenu des modifications est précisé (history) avec un codage couleur (rouge / vert) correspondant à avant / après modifications :
 
 ![image](./images/GD/GD-VSC-modifications-detectees-1.jpg) 
 
