@@ -86,7 +86,8 @@ Votre dépôt distant contient une copie exacte y compris toutes les branches (v
 
 ![image](./images/GD/marlin-clone-local.jpg) 
 
-J’ai pris depuis longtemps l’habitude d’organiser et regrouper mes dossiers / répertoires sur mes disques durs (ça facilite les sauvegardes 😉 ) => création d’un nouveau répertoire sur une unité de stockage pour accueillir nos futurs «développements» ( C:\GITHUB par exemple ) 
+Ayant pris depuis longtemps l’habitude d’organiser et regrouper mes dossiers / répertoires sur mes disques durs (ça facilite les sauvegardes 😉 )  
+=> création d’un nouveau répertoire sur une unité de stockage pour accueillir nos futurs «développements» ( C:\GITHUB par exemple ) 
 
 ### Première option :
 
