@@ -87,7 +87,7 @@ Votre dépôt distant contient une copie exacte y compris toutes les branches (v
 ![image](./images/GD/marlin-clone-local.jpg) 
 
 Ayant pris depuis longtemps l’habitude d’organiser et regrouper mes dossiers / répertoires sur mes disques durs (ça facilite les sauvegardes 😉 )  
-=> création d’un nouveau répertoire sur une unité de stockage pour accueillir nos futurs «développements» ( C:\GITHUB par exemple ) 
+=> création d’un nouveau répertoire sur une unité de stockage pour accueillir nos futurs «*développements*» ( C:\GITHUB par exemple ) 
 
 ### Première option :
 
@@ -110,5 +110,45 @@ Une barre de progression signale le transfert en cours. A la fin du processus de
 Que ce soit avec la première option ou la seconde, toutes les branches du dépôt cloné sont maintenant accessibles sur notre matériel local (origin/x,x,x). 
 
 ![image](./images/GD/marlin-cloné-localement.jpg) 
+
+Désormais, Github Desktop nous permet d’accéder à notre dépôt distant:
+* View on Github [1]),
+* à notre emplacement local (Show in Explorer [2]),
+* et également d’utiliser notre éditeur de code (VSC) en cliquant (Open in visual Studio Code [3]) ; il est évidemment possible d’indiquer un autre éditeur que VSC via les préférences du logiciel ou en cliquant «options» (4).
+
+![image](./images/GD/GitHubDesktop_interface-acces.jpg) 
+
+## Création d’une nouvelle branche locale
+
+Je souhaite créer un firmware basé sur la version stable de Marlin pour une nouvelle imprimante :
+
+* Choix de la branche (version) qui servira de base (Current branch)
+
+![image](./images/GD/GitHubDesktop_nouvelle-branche.jpg) 
+
+* nommer cette branche puis clic sur «Create branch»
+
+![image](./images/GD/GitHubDesktop_nouvelle-branche-nom.jpg) 
+
+La branche est désormais créée sur notre disque **localement** :
+
+![image](./images/GD/GitHubDesktop_nouvelle-branche-créée-locale.jpg) 
+
+On peut maintenant via notre éditeur (VSC) faire toutes les modifications manuellement dans les fichiers ***configuration.h*** et ***configuration_adv.h*** ou quand le modèle d’imprimante dispose de fichiers exemples fournis par l’équipe de Marlin, recopier les fichiers nécessaires en remplacement de ceux du clonage.
+
+Les modifications seront automatiquement détectées dans GD 😉
+
+* détection des changements dans GD
+
+![image](./images/GD/GD-modifications-detectees.jpg) 
+
+* le contenu des modifications est précisé (history), rouge / vert avant / après modifications :
+
+![image](./images/GD/GD-VSC-modifications-detectees-1.jpg) 
+
+Pour le moment, toutes ces modifications n’existent qu’au niveau local, il reste à synchroniser avec github => Publish branch 
+
+![image](./images/GD/GitHubDesktop_nouvelle-branche-créée.jpg) 
+
 
 
