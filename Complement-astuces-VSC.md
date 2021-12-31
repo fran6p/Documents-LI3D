@@ -11,9 +11,11 @@ Voir également le point D/3 plus bas
 C) La compilation (rappel) :
 
 Via Platformio IDE :
-1) Dans l'onglet «PIO Home», «Open Project» : 
+1) Dans l'onglet «PIO Home», «Open Project» :
+
 ![image](./images/VSC/platformio-ouvrir-projet.jpg)
 2) Via l'explorateur de fichiers, sélectionner le dossier contenant à la fois le fichier platformio.ini et le dossier Marlin, clic sur «Open "nom-du-dossier-sélectionné" puis confirmation en cliquant «OUI» :
+
 ![image](./images/VSC/platformio-ouvrir-projet-selection-dossier.jpg)
 ![image](./images/VSC/platformio-ouvrir-projet-selection-dossier-confiance.jpg)	
 	
