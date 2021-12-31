@@ -1,5 +1,5 @@
 ### Compléments, astuces
-A) Pour éviter des problèmes de compilation, le mieux est que le dossier Marlin soit au plus proche de la racine du disque :
+A) Pour éviter des problèmes de compilation, le mieux est que **le dossier Marlin soit au plus proche de la racine du disque** :
 
 Exemple: C:\Marlin plutôt que dans le dossier perso de l'utilisateur (éviter les signes diacritiques (caractères accentués) et/ou espaces dans le chemin d'accès à ce dossier)
 
