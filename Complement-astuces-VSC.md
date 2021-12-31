@@ -59,3 +59,12 @@ Pendant que la compilation se réalise :
 
 ![image](./images/VSC/platformioIDE-intellisense-1.jpg)
 
+ E) Problèmes spécifiques Windows / Platformio:
+
+Parfois, Platformio rencontre des problèmes avec Python. C'est généralement Windows (10 / 11) qui en est la cause, particulièrement la gestion des alias d'applications :
+
+Il suffit de désactiver les alias d'exécution d'application de W10.
+
+Zone recherche de «Windows» taper Alias puis sélectionner «Gérer les alias d'exécution d'application» (plus d'infos en anglais) : 
+
+![image](./images/VSC/alias-recherche.jpg)
