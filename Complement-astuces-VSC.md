@@ -24,7 +24,7 @@ C) La compilation (rappel) :
 
 ![image](./images/VSC/platformio-compiler.jpg)	
 
-4) Si / quand la compilation est réussie ET que l'imprimante est reliée à l'ordinateur, on peut téléverser le firmware dans la carte (clic sur «flèche droite»)
+4) Si / quand la **compilation est réussie ET que l'imprimante est reliée à l'ordinateur**, on peut téléverser le firmware dans la carte (clic sur «flèche droite»)
 
 ![image](./images/VSC/platformio-televerser.jpg)
 
