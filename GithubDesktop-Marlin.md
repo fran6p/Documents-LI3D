@@ -10,11 +10,11 @@ Quand j’ai commencé à préparer mes propres firmwares pour mes imprimantes, 
 
 Si parmi les [exemples de modèles fournis par l’équipe du Marlin](https://github.com/MarlinFirmware/Marlin/tree/2.0.x/config) existait l’imprimante à préparer, la tâche était facilitée :
 
-* copier les configuration.h et configuration_adv.h (et éventuellement s’ils étaient également fournis, _Statusscreen.h et _Bootscreen.h) puis les coller dans le dossier Marlin en remplacement de ceux par défaut.
-* ensuite l’étape de compilation
+1. copier les configuration.h et configuration_adv.h (et éventuellement s’ils étaient également fournis, _Statusscreen.h et _Bootscreen.h) puis les coller dans le dossier Marlin en remplacement de ceux par défaut.
+2. ensuite l’étape de compilation
   * correction des erreurs,
   * retour à l’étape 2 (compilation)
-* finalement la compilation étant réussie alors dernière étape, flasher le firmware.
+3. finalement la compilation étant réussie alors dernière étape, flasher le firmware.
 
 Si une nouvelle version stable de Marlin était disponible, il fallait répéter les étapes précédentes depuis la récupération du Marlin compressé jusqu’au flashage.
 
