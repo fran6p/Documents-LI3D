@@ -34,3 +34,8 @@ Via Auto Build Marlin (ABM) :
 1) Compiler le firmware en sélectionnant le greffon ABM. puis l'icone «Marteau» :
 
 ![image](./images/VSC/ABM-compller.jpg)
+
+Pendant que la compilation se réalise :
+
+![image](./images/VSC/ABM-compilation-en-cours.jpg)
+
