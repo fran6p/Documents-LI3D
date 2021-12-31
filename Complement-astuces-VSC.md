@@ -43,3 +43,12 @@ Pendant que la compilation se réalise :
 
 ![image](./images/VSC/ABM-televerser-carte-mere.jpg)
 
+ D) Éventuellement, appliquer la suite de manipulations ci-dessous quand ça ne fonctionne pas comme attendu. Parfois cela résout le problème. Si le système d'exploitation est Windows, un redémarrage est souvent salutaire.
+
+ A effectuer étape par étape. Après chaque étape, retenter une compilation:
+
+ 1) Nettoyer le cache de Platformio (Pio pour les «intimes» 😄 ) :
+ 
+ ![image](./images/VSC/platformioclean-cleanall.jpg)
+ 
+	
