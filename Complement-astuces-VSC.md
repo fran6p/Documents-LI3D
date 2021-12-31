@@ -55,4 +55,7 @@ Pendant que la compilation se réalise :
 
 ![image](./images/VSC/supprimerdossier_pio.jpg)
 
+3) Sans rapport mais utile pour les problèmes «Intellisense» :
+
+![image](./images/VSC/platformioIDE-intellisense-1.jpg)
 
