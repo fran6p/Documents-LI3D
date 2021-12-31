@@ -50,4 +50,11 @@ Utiliser github.com (*ou gitlab si Microsoft vous hérisse le poil*) nécessite 
 
 ![image](./images/GD/creer-compte-github.jpg)
 
+Un [formulaire](https://github.com/account/organizations/new?plan=free&ref_cta=Create%2520an%2520organization&ref_loc=pricing%2520comparison&ref_page=%2Fpricing) s’affiche qu’il suffit de compléter : 
+
+![image](./images/GD/formulaire-creation-compte-github.jpg)
+
+
+
+
 
