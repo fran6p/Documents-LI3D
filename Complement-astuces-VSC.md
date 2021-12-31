@@ -68,3 +68,7 @@ Il suffit de désactiver les alias d'exécution d'application de W10.
 Zone recherche de «Windows» taper Alias puis sélectionner «Gérer les alias d'exécution d'application» (plus d'infos en anglais) : 
 
 ![image](./images/VSC/alias-recherche.jpg)
+
+Dans la fenêtre qui s'ouvre, désactiver les alias pour toutes les versions de Python qui seraient installées, relancer la procédure  d'installation de l'extension Platformio dans VSC. 
+
+![image](./images/VSC/aliasexecutionapplication-pythondesactive.jpg)
