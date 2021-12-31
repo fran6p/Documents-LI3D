@@ -152,3 +152,14 @@ Pour le moment, toutes ces modifications n’existent qu’au niveau local, il r
 
 ![image](./images/GD/marlin-push-github.jpg) 
 
+L’intérêt de la publication de cette branche sur github est :
+
+* rendre accessible notre dépôt à d’autres utilisateurs en leur donnant le lien vers celui-ci et vers une branche particulière
+* en cas de problème matériel en local (expérience vécue lors de la perte d’un disque dur :-( ), il suffira de cloner localement notre dépôt distant pour récupérer nos développements
+
+![image](./images/GD/marlin-perte-DD-reclone.jpg) 
+
+## Maintenir à jour la version de Marlin 
+
+
+
