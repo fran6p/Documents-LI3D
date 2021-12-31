@@ -44,7 +44,7 @@ Pour aller plus loin dans l’utilisation de GIT :
 
 Git est pratique pour travailler localement mais pour pouvoir diffuser, modifier et faire bénéficier d’autres utilisateurs de ce travail, un système distant comme [github](https://github.com/) augmente les possibilités.
 
-Utiliser github.com (ou gitlab si Microsoft vous hérisse le poil) nécessite la création d’un compte uniquement si vous voulez créer vos propres dépôts.
+Utiliser github.com (*ou gitlab si Microsoft vous hérisse le poil*) nécessite la création d’un compte uniquement si vous voulez créer vos propres dépôts.
 
 [Créer son compte Github](https://github.com/pricing) (gratuit) en cliquant sur «Create a free orgaization» : 
 
