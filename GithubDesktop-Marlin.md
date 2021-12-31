@@ -179,4 +179,45 @@ Marlin est régulièrement mis à jour (bugfixes (plusieurs fois par jour) et st
 
 ![image](./images/GD/branche-a-jour.jpg) 
 
+Dans l’exemple ci-dessus, la version de Marlin étant la version stable, il n’y pas eu de changements (message : *this branch is up to date with upstream/2.0.x*)
 
+Exemple avec la version «bugfixes» dont les mises à jour sont quotidiennes (plusieurs fois par jour parfois) :
+
+![image](./images/GD/branche-non-a-jour.jpg)
+
+Le nombre de modifications est précisé, il suffit de cliquer le bouton «***Create a merge commit***» pour fusionner ces changements dans notre branche locale (***Origin***). La majorité du temps il n’y a pas de conflits.
+
+### CAS lors de «conflits» 
+
+De temps en temps, la fusion (merge) ne peut se faire automatiquement seule. Github Desktop nous indique alors le nombre de fichiers pour lesquels existent un/des conflit(s) :
+
+![image](./images/GD/conflit-détecté-lors-merge.jpg) 
+
+En cliquant sur le bouton «***Merge upstream/… into Branch***», une nouvelle fenêtre nous précise quels fichiers sont concernés :
+
+![image](./images/GD/résoudre-les-conflits-via-VSC.jpg) 
+
+En cliquant sur le bouton permettant d’accéder à l’éditeur «***Open in Visual Studio Code***», le (les) conflits seront signalés, **un choix devra lors être réalisé par l'utilisateur** :
+
+![image](./images/GD/exemple-conflit-merge.jpg) 
+
+On pourra soit :
+
+* ne pas mettre à jour notre branche avec les modifications de la nouvelle version (***Accept Current Change***)
+
+* mettre à jour notre branche (***Accept Incoming Change***)
+
+* accepter les deux dans notre fichier pour pouvoir les comparer (***Accept Both Changes***). *Il faudra ensuite faire les modifications manuellement en évitant de réaliser des doublons évidemment*.
+
+Une fois le (les) conflit(s) résolu(s), **ne pas oublier d’enregistrer le fichier modifié dans VSC** (clic sur l’icone «disquette»)
+
+![image](./images/GD/VSC-enregistrer-tout.jpg) 
+
+GD détectera notre choix et continuera la fusion (merge). Nos versions de Marlin seront alors à jour. Ne restera plus qu’à compiler notre nouveau firmware «*up to date*» puis à le flasher sur la carte de l’imprimante. Sans oublier, évidemment de tester son fonctionnement 😉 
+
+Voilà, on arrive au terme de ce long document qui relate ma manière de travailler quand je propose des firmwares aux utilisateurs de ce [forum](https://www.lesimprimantes3d.fr/forum/). D’autres méthodes, procédures existent ; à vous de trouver celles avec lesquelles vous avez le plus d’affinités.
+
+L'idée de ce document provient d'une vidéo du Youtubeur australien [TeachingTech](https://www.youtube.com/c/TeachingTech).  
+N'étant pas un adepte des vidéos pour un apprentissage, j'ai donc créé cette alternative au format écrit qui plus est, en langue française.
+
+🙂
