@@ -26,7 +26,7 @@ Via Platformio IDE :
 
 4) Si / quand la compilation est réussie ET que l'imprimante est reliée à l'ordinateur, on peut téléverser le firmware dans la carte (clic sur «flèche droite»)
 
-PS: ça ne fonctionne qu'avec les cartes 8 bits (Atmega1284, Atmega2560). Avec des cartes 32 bits à base de STM ou LPC, la procédure de flashage consiste à recopier le fichier en .bin du dossier .pio/build/STM??? (LPC???) sur une carte SD (moins de 32Go, formatée FAT32 secteurs de 4Ko) et allumer l'imprimante pour lancer le flash.
-
 ![image](./images/VSC/platformio-televerser.jpg)
+
+PS: ça ne fonctionne qu'avec les cartes 8 bits (Atmega1284, Atmega2560). Avec des cartes 32 bits à base de STM ou LPC, la procédure de flashage consiste à recopier le fichier en .bin du dossier .pio/build/STM??? (LPC???) sur une carte SD (moins de 32Go, formatée FAT32 secteurs de 4Ko) et allumer l'imprimante pour lancer le flash.
 
