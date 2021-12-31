@@ -67,7 +67,7 @@ Parfois, Platformio rencontre des problèmes avec Python. C'est généralement W
 
 Il suffit de désactiver les alias d'exécution d'application de W10.
 
-Zone recherche de «Windows» taper Alias puis sélectionner «Gérer les alias d'exécution d'application» (plus d'infos en anglais) : 
+Zone recherche de «Windows» taper Alias puis sélectionner «Gérer les alias d'exécution d'application» ( [plus d'infos en anglais](https://www.windowscentral.com/how-manage-app-execution-aliases-windows-10) ) : 
 
 ![image](./images/VSC/alias-recherche.jpg)
 
