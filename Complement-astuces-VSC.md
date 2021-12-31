@@ -1,17 +1,17 @@
 # Compléments, astuces
-###A) Pour éviter des problèmes de compilation  
+### A) Pour éviter des problèmes de compilation  
 Le mieux est que **le dossier Marlin soit au plus proche de la racine du disque** :
 
 Exemple: C:\Marlin plutôt que dans le dossier perso de l'utilisateur (_**éviter les signes diacritiques (caractères accentués) et/ou espaces dans le chemin d'accès à ce dossier**_)
 
-###B) J'ai une erreur du type : «*VSC me demande de mettre à jour les includepath*»
+### B) J'ai une erreur du type : «*VSC me demande de mettre à jour les includepath*»
 
 C'est fréquent avec VSC. La base de données (Intellisense) n'est pas toujours à jour, la plupart du temps ça n'empêche pas la compilation. Il suffit parfois d'attendre quelques minutes pour que cette erreur disparaisse sinon une fermeture de VSC puis une réouverture permet parfois de tout faire rentrer dans l'ordre.
 *Voir également le point D/3 plus bas*
 
-###C) La compilation (rappel)
+### C) La compilation (rappel)
 
-##Via Platformio IDE :
+## Via Platformio IDE :
 1) Dans l'onglet «PIO Home», «Open Project» :
 
 ![image](./images/VSC/platformio-ouvrir-projet.jpg)
@@ -31,7 +31,7 @@ C'est fréquent avec VSC. La base de données (Intellisense) n'est pas toujours 
 
 PS: **ça ne fonctionne qu'avec les cartes 8 bits (Atmega1284, Atmega2560)**. Avec des cartes 32 bits à base de STM ou LPC, la procédure de flashage consiste à recopier le fichier en .bin du dossier .pio/build/STM??? (LPC???) sur une carte SD (moins de 32Go, formatée FAT32 secteurs de 4Ko) et allumer l'imprimante pour lancer le flash.
 
-##Via Auto Build Marlin (ABM) :
+## Via Auto Build Marlin (ABM) :
 1) Compiler le firmware en sélectionnant le greffon ABM. puis l'icone «Marteau» :
 
 ![image](./images/VSC/ABM-compller.jpg)
@@ -44,7 +44,7 @@ Pendant que la compilation se réalise :
 
 ![image](./images/VSC/ABM-televerser-carte-mere.jpg)
 
-###D) 
+### D) Manipulations diverses  
 Éventuellement, appliquer la suite de manipulations ci-dessous quand ça ne fonctionne pas comme attendu. Parfois cela résout le problème. *Si le système d'exploitation est **Windows**, un redémarrage est souvent salutaire*.
 
 A effectuer étape par étape. Après chaque étape, retenter une compilation:
@@ -61,7 +61,7 @@ A effectuer étape par étape. Après chaque étape, retenter une compilation:
 
 ![image](./images/VSC/platformioIDE-intellisense-1.jpg)
 
-###E) Problèmes spécifiques Windows / Platformio:
+### E) Problèmes spécifiques Windows / Platformio:
 
 Parfois, Platformio rencontre des problèmes avec Python. C'est généralement Windows (10 / 11) qui en est la cause, particulièrement la gestion des alias d'applications :
 
