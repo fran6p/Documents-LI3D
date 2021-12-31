@@ -74,5 +74,17 @@ Cliquer sur le bouton FORK :
 
 ![image](./images/GD/fork-marlin-github.jpg) 
 
+ Vous venez de créer une copie identique du dépôt Marlin dans votre compte github précédemment créé
 
+![image](./images/GD/marlin-fork.jpg) 
+
+Votre dépôt distant contient une copie exacte y compris toutes les branches (variantes) du Marlin originel. Désormais, le dépôt Marlin originel sera dénommé «***UPSTREAM***», la version de votre dépôt, elle, sera appelée «***ORIGIN***».
+
+![image](./images/GD/marlin-upstream-origin.jpg) 
+
+**Le fork pour le moment n’est présent que dans notre dépôt Github**. Pour réaliser les modifications des fichiers de configuration de Marlin, je trouve plus pratique de travailler en local sur son propre ordinateur. On va donc récupérer le contenu de notre dépôt distant.
+
+![image](./images/GD/marlin-clone-local.jpg) 
+
+J’ai pris depuis longtemps l’habitude d’organiser et regrouper mes dossiers / répertoires sur mes disques durs (ça facilite les sauvegardes 😉 ) => création d’un nouveau répertoire sur une unité de stockage pour accueillir nos futurs «développements» ( C:\GITHUB par exemple ) 
 
