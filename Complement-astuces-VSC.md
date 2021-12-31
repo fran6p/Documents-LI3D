@@ -30,3 +30,7 @@ Via Platformio IDE :
 
 PS: ça ne fonctionne qu'avec les cartes 8 bits (Atmega1284, Atmega2560). Avec des cartes 32 bits à base de STM ou LPC, la procédure de flashage consiste à recopier le fichier en .bin du dossier .pio/build/STM??? (LPC???) sur une carte SD (moins de 32Go, formatée FAT32 secteurs de 4Ko) et allumer l'imprimante pour lancer le flash.
 
+Via Auto Build Marlin (ABM) :
+1) Compiler le firmware en sélectionnant le greffon ABM. puis l'icone «Marteau» :
+
+![image](./images/VSC/ABM-compller.jpg)
