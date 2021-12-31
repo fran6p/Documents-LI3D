@@ -88,3 +88,26 @@ Votre dépôt distant contient une copie exacte y compris toutes les branches (v
 
 J’ai pris depuis longtemps l’habitude d’organiser et regrouper mes dossiers / répertoires sur mes disques durs (ça facilite les sauvegardes 😉 ) => création d’un nouveau répertoire sur une unité de stockage pour accueillir nos futurs «développements» ( C:\GITHUB par exemple ) 
 
+### Première option :
+
+Via le site github.com de notre dépôt (notre compte), clic sur le bouton «**Code**» puis => *Open with Github Desktop*
+
+![image](./images/GD/github-code-GD.jpg) 
+
+### Seconde option :
+
+Via GD, menu principal, «*Clone repository…*»
+
+![image](./images/GD/GitHubDesktop_clone-repo.jpg) 
+
+Saisir l’URL du dépôt à cloner (notre «ORIGIN») dans l’onglet URL, modifier éventuellement le chemin d’accès (Local path) pour correspondre au lieu de stockage prévu puis clic «Clone»
+
+![image](./images/GD/GitHubDesktop_clone-repo-URL.jpg) 
+
+Une barre de progression signale le transfert en cours. A la fin du processus de copie en local, on nous demande comment on souhaite contribuer au développement du dépôt cloné (contribuer au projet parent ou pour son propre usage). Si par exemple on pense proposer des corrections / modifications au projet originel (pull request), il est préférable d’indiquer que l’on contribuera au projet parent.
+
+Que ce soit avec la première option ou la seconde, toutes les branches du dépôt cloné sont maintenant accessibles sur notre matériel local (origin/x,x,x). 
+
+![image](./images/GD/marlin-cloné-localement.jpg) 
+
+
