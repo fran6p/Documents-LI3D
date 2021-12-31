@@ -114,7 +114,7 @@ Que ce soit avec la première option ou la seconde, toutes les branches du dép�
 Désormais, Github Desktop nous permet d’accéder à notre dépôt distant:
 * View on Github [1]),
 * à notre emplacement local (Show in Explorer [2]),
-* et également d’utiliser notre éditeur de code (VSC) en cliquant (Open in visual Studio Code [3]) ( *il est évidemment possible d’indiquer un autre éditeur que VSC via les préférences du logiciel ou en cliquant «options»* (4))).
+* et également d’utiliser notre éditeur de code (VSC) en cliquant (Open in visual Studio Code [3]) ( *il est évidemment possible d’indiquer un autre éditeur que VSC via les préférences du logiciel ou en cliquant «options»* (4) ).
 
 ![image](./images/GD/GitHubDesktop_interface-acces.jpg) 
 
