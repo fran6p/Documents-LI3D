@@ -161,5 +161,22 @@ L’intérêt de la publication de cette branche sur github est :
 
 ## Maintenir à jour la version de Marlin 
 
+Marlin est régulièrement mis à jour (bugfixes (plusieurs fois par jour) et stable (moins souvent)). ***On peut tenir notre dépôt local également à jour en suivant les modifications du dépôt originel (UPSTREAM) et en les répercutant dans nos branches.***
+
+### Réalisations par étapes : Upstream => local
+
+1. Dans GD, choix de la branche à mettre à jour :
+
+* via le menu, onglet «*Branch*» => *Merge into current branch*
+
+![image](./images/GD/gd-menu-branch-merge-into-current-branch.jpg) 
+
+* depuis la branche sélectionnée, *Choose a branch to merge into branche-sélectionnée*
+
+![image](./images/GD/current-branch-choose-a-branch-to-merge-into-2.0.x.jpg) 
+
+* indiquer la version «**Upstream**» qui servira à fusionner : 
+
+![image](./images/GD/branche-a-jour.jpg) 
 
 
