@@ -51,4 +51,8 @@ Pendant que la compilation se réalise :
  
  ![image](./images/VSC/platformioclean-cleanall.jpg)
  
-	
+2) Si la compilation pose toujours problème, sortir l'artillerie lourde :
+
+![image](./images/VSC/supprimerdossier_pio.jpg)
+
+
