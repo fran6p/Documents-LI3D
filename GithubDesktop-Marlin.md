@@ -218,6 +218,6 @@ GD détectera notre choix et continuera la fusion (merge). Nos versions de Marli
 Voilà, on arrive au terme de ce long document qui relate ma manière de travailler quand je propose des firmwares aux utilisateurs de ce [forum](https://www.lesimprimantes3d.fr/forum/). D’autres méthodes, procédures existent ; à vous de trouver celles avec lesquelles vous avez le plus d’affinités.
 
 L'idée de ce document provient d'une vidéo du Youtubeur australien [TeachingTech](https://www.youtube.com/c/TeachingTech).  
-N'étant pas un adepte des vidéos pour un apprentissage, j'ai donc créé cette alternative au format écrit qui plus est, en langue française.
+N'étant pas un adepte des vidéos pour un apprentissage, j'ai donc créé cette alternative au format écrit, qui plus est en langue française.
 
 🙂
