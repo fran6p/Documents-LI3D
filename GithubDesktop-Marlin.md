@@ -40,7 +40,7 @@ Pour aller plus loin dans l’utilisation de GIT :
 
 - [un cours assez complet](https://www.pierre-giraud.com/git-github-apprendre-cours/)
 
-- [la cheat sheet](https://training.github.com/downloads/fr/github-git-cheat-sheet/) [(PDF)]](https://training.github.com/downloads/fr/github-git-cheat-sheet.pdf)
+- [la cheat sheet](https://training.github.com/downloads/fr/github-git-cheat-sheet/) [(PDF)](https://training.github.com/downloads/fr/github-git-cheat-sheet.pdf)
 
 Git est pratique pour travailler localement mais pour pouvoir diffuser, modifier et faire bénéficier d’autres utilisateurs de ce travail, un système distant comme [github](https://github.com/) augmente les possibilités.
 
