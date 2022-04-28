@@ -20,7 +20,7 @@ Vous n’êtes pas sans savoir ou alors vous êtes encore terré dans votre grot
 
 Régulièrement, je consulte le site [«RPiLocator» ](https://rpilocator.com/) pour connaître l’état des stocks ainsi que les prix.
 
-La pénurie et/ou les prix pratiqués sont une des raisons pour laquelle on peut envisager se tourner vers d’autres cartes du même genre (OrangePi, BananaPi et autres variantes). La seconde raison et probablement la plus importante ayant conduit à la rédaction de ce tutoriel est la conséquence d’un dépannage pour un de mes partenaires modérateurs. Grâce à lui, j’ai pu me faire la main sur une carte alternative au RaspberryPI : une OrangePI Zéro 2
+La pénurie et/ou les prix pratiqués sont une des raisons pour laquelle on peut envisager se tourner vers d’autres cartes du même genre (OrangePi, BananaPi et autres variantes). La seconde raison et probablement la plus importante ayant conduit à la rédaction de ce tutoriel est la conséquence d’un dépannage pour un de mes partenaires modérateurs du forum [«Lesimprimantes3d.fr» ](https://www.lesimprimantes3d.fr/forum/). Grâce à lui, j’ai pu me faire la main sur une carte alternative au RaspberryPI : une OrangePI Zéro 2
 
 La carte SBC (Single Board Computer) utilisée ici une [OrangePi Zero 2](https://fr.aliexpress.com/item/1005001823662622.html?gatewayAdapt=glo2fra&pvid=1f8c2f19-6b28-4698-959b-c0074ada3e5b&_t=gps-id%3ApcDetailBottomMoreThisSeller%2Cscm-url%3A1007.13339.274681.0%2Cpvid%3A1f8c2f19-6b28-4698-959b-c0074ada3e5b%2Ctpp_buckets%3A668%232846%238112%231997&pdp_ext_f=%257B%2522sku_id%2522%253A%252212000017777234288%2522%252C%2522sceneId%2522%253A%25223339%2522%257D&pdp_pi=-1%253B28.3%253B-1%253B-1%2540salePrice%253BEUR%253Brecommend-recommend) :
 
