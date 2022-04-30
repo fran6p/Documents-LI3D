@@ -95,75 +95,74 @@ Une fois p7zip installé, saisir dans le terminal la commande suivante pour extr
 
 Remplacer évidemment « nom-de-l-image» par le nom de l’archive téléchargée.
 
-Une fois l'archive décompressée, vous obtiendrez un fichier .img. Celui-ci devra être gravé sur la carte SD.
+Une fois l'archive décompressée, vous obtiendrez **un fichier d'extension .img**. Celui-ci devra être gravé sur la carte SD.
 
 ### Flash de l’image
 
 Le logiciel [BalenaEtcher](https://www.balena.io/etcher/) sera utilisé pour cette «gravure»:
-\- choix du fichier .img
+- choix du fichier .img
 
 ![](images/OPiz2/004.jpeg)![](images/OPiz2/005.jpeg)
 
-\- sélection du lecteur de carte µSD sur votre ordinateur (bien vérifier que la taille correspond à celle de votre carte SD,
+- sélection du lecteur de carte µSD sur votre ordinateur (bien vérifier que la taille correspond à celle de votre carte SD,
 
 **[ATTENTION] Toutes les données du disque choisi seront effacées ! La procédure de flashage effacera complètement le disque sélectionné, donc si vous choisissez le mauvais, vous risquez de perdre des données.**
 
 ![](images/OPiz2/006.jpeg)
 
-\- gravure de l'image (quelques minutes de patience)
+- gravure de l'image puis vérification (quelques minutes de patience)
 
 ![](images/OPiz2/007.jpeg)
 
 ![](images/OPiz2/008.jpeg)![](images/OPiz2/009.jpeg)![](images/OPiz2/010.jpeg)
 
-\- éjection de la carte de votre ordinateur
+- éjection de la carte de votre ordinateur
 
 ![](images/OPiz2/011.jpeg)
 
 C’est fini pour cette étape !
 
-**A noter** : contrairement aux images pour les Raspberry Pi, où la carte SD est partitionnée en deux (une partition en FAT32 (/boot) et une en ext4 (/), Armbian ne fait qu’une seule partition (ext4) illisible avec Windows (il vous le dira d’ailleurs en vous proposant de formater la carte, **ne le faites surtout pas** sinon retour à l’étape «Flash de l’image»)
+**A noter** : contrairement aux images pour les Raspberry Pi, où la carte SD est scindée en deux partitions (une en FAT32 (/boot) et une en ext4 (/), Armbian ne fait qu’une seule partition (ext4) illisible avec Windows (il vous le dira d’ailleurs en vous proposant de formater la carte, **ne le faites surtout pas** sinon retour à l’étape «Flash de l’image»)
 
 ### Premier lancement
-
 
 Le premier démarrage sera un peu long car le système étendra la capacité de stockage en redimensionnant la partition à la capacité maximale de celle-ci.
 
 Insérer la carte SD dans le lecteur de l’OPiz2 (emplacement sous la carte) et démarrer la carte en branchant le câble USB-C relié à l’alimentation.
-**Un câble Ethernet doit être branché de votre routeur au port OPiz2, même si vous avez l'intention d'utiliser le Wifi par la suite**.
+**Un câble Ethernet doit être branché de votre routeur au port OPiz2**, même si vous avez l'intention d'utiliser le Wifi par la suite.
 
-Attendez bien que la diode de la carte passe au vert (indique que le réseau est connecté). Une fois fait, il faudra trouver quelle adresse IP a été attribuée par votre routeur à l'OPiz2.
+**Attendez bien que la diode de la carte passe au vert** (indique que le réseau est connecté: la carte a reçu une adresse IP via DHCP). Une fois fait, il faudra trouver quelle adresse IP a été attribuée par votre routeur à l'OPiz2.
 
 Plusieurs façons de découvrir cette adresse (une de celles ci-dessous devrait vous le permettre :
 
 1) Se connecter-à la page web d'administration du routeur, lister les clients (ou les baux DHCP). Chercher soit un bail récent, soit le client avec le nom **orangepizero2**. Vous aurez alors l'adresse IPv4 (une séquence de 4 nombres séparés par un point, exemple 192.168.1.247) de la carte.
 
-2) Utiliser l'outil nmap (ou un outil de scanner IP). Analyser votre propre réseau à la recherche de nouveaux périphériques, avec un scan ping. La commande nmap à saisir : «**nmap -sP 192.168.1.0/24**» (sans les guillemets) ou «**nmap -sP 192.168.1.0/16**» (si le réseau privé n’est pas 192.168.1.x). La réponse devrait être du genre :
+2) Utiliser l'outil nmap (ou un outil de scanner IP). Analyser votre propre réseau à la recherche de nouveaux périphériques, avec un scan ping. La commande nmap à saisir : «**nmap -sP 192.168.1.0/24**» (sans les guillemets) ou «**nmap -sP 192.168.0.0/16**» (si le réseau privé n’est pas 192.168.1.x). La réponse devrait être du genre :
 
 ```
 Nmap scan report for orangepizero2 (192.168.1.247)
 Host is up (0.0015s latency)
 ```
 
-3) Ouvrir un terminal, chercher l'adresse IP de votre ordinateur (ipconfig avec Windows, ifconfig avec Linux). Connaissant votre propre adresse IP, vous avez l’adresse de votre réseau (exemple : IP ordinateur=192.168.1.100 alors réseau= 192.168.1,0). Vous pouvez tenter de «pinguer» les adresses 192.168.1.x (x variant de 1 à 254 moins le nombre correspondant à votre propre adresse). C’est un processus d’essais / erreurs. A un moment vous devriez obtenir une réponse. Il faudra jsute vérifier que cela correspond bien à l’OPiz2 (clignotement de la LED verte de celui-ci).
+3) Ouvrir un terminal, chercher l'adresse IP de votre ordinateur (ipconfig avec Windows, ifconfig avec Linux). Connaissant votre propre adresse IP, vous avez l’adresse de votre réseau (exemple : IP ordinateur=192.168.1.100 alors réseau= 192.168.1.0). Vous pouvez tenter de «pinguer» les adresses 192.168.1.x (x variant de 1 à 254 moins le nombre correspondant à votre propre adresse). C’est un processus d’essais / erreurs. A un moment vous devriez obtenir une réponse. Il faudra juste vérifier que cela correspond bien à l’OPiz2 (clignotement de la LED verte de celui-ci).
 
 ### Connexion initiale à l'OPiz2
 
-Vous êtes désormais en possession de l'adresse IP de la carte, il faut s’y connecter en SSH. Libre à vous d’utiliser le client qui vous sied (Linux et MacOS, possèdent un client natif : il suffit de taper ssh root@192.168.1.247 (en remplaçant par l'adresse IP de la carte) dans un terminal. Sous Windows, vous pouvez également (W10 / W11) utiliser le client natif (ouvrir un terminal (Invite de commandes) puis ssh <root@192.168.1.247> ) ou vous pouvez télécharger Putty et utiliser son interface graphique.
+Vous êtes désormais en possession de l'adresse IP de la carte, il faut s’y connecter en SSH. Libre à vous d’utiliser le client qui vous sied (Linux et MacOS, possèdent un client natif : il suffit de taper ``ssh root@192.168.1.247`` (en remplaçant par l'adresse IP de la carte) dans un terminal. Sous Windows, vous pouvez également (W10 / W11) utiliser le client natif (ouvrir un terminal (Invite de commandes) puis ``ssh root@192.168.1.247`` ) ou vous pouvez télécharger Putty et utiliser son interface graphique.
 
 A la première connexion en ssh sur la OPiz2, un message d’avertissement s’affichera. Il faudra accepter l’empreinte de la clé SHA256 avant de pouvoir poursuivre.
 
-NB : Il n'y a pas de compte par défaut dans l'installation d'Armbian. Après l'installation, les utilisateurs se connectent à l'unité en tant que "root" et sont invités à changer le mot de passe root, puis à créer un nouveau compte utilisateur.
+NB : **Il n'y a pas de compte par défaut autre que 'root' dans l'installation d'Armbian**. Après l'installation, les utilisateurs se connectent à l'unité en tant que "root" et sont invités à changer le mot de passe root, puis à créer un nouveau compte utilisateur.
 
-Donc par défaut Armbian accepte l’usager «root» avec le mot de passe «1234». Il faut normalement procéder au changement de ce mot de passe «faible» par un plus «fort». Ce nouveau MDP doit remplir de nombreux critères avant d’être accepté (longueur, caractères autorisés, n’appartenant pas à un mot du dictionnaire, …). Ça m’a vite «énervé», en saisissant plusieurs fois le mot de passe par défaut (trois répétitions), j’ai tout de même accès en tant que «root» (équivalent de Dieu pour les croyants :D).
+Donc par défaut Armbian accepte l’usager «root» avec le mot de passe «1234». Il faut normalement procéder au changement de ce mot de passe «faible» par un plus «fort». Ce nouveau MDP doit remplir de nombreux critères avant d’être accepté (longueur, caractères autorisés, n’appartenant pas à un mot du dictionnaire, …). Ça m’a vite «énervé», en saisissant plusieurs fois le mot de passe par défaut (trois répétitions), j’ai tout de même accès en tant que «root» (équivalent de Dieu pour les croyants :no_mouth: ).
 
-Pour éviter qu’à la prochaine connexion, Armbian me redemande de modifier le mot de passe, quelques commandes sont nécessaires (et suffisantes) :
+Pour éviter qu’à la prochaine connexion, Armbian me redemande de modifier le mot de passe, quelques commandes sont nécessaires (et suffisantes, **ne pas saisir les parenthèses ni le texte contenu dans celles-ci** :wink: ) :
 
 `pwd` (où est-on dans l’arborescence)
 
 `ls -al` (afficher le contenu du dossier, normalement /root)
 
-`rm -f .not\_logged\_in\_yet` (supprimer ce fichier sinon à la prochiane connexion, il sera demandé de modifier le mdp de root avec les critères vus plus haut)
+`rm -f .not\_logged\_in\_yet` (supprimer ce fichier sinon à la prochaine connexion, il sera demandé de modifier le mdp de root avec les critères vus plus haut)
 
 `echo -e "1234\n1234" | (passwd root)`
 
@@ -174,9 +173,6 @@ Le mot de passe root initial est désormais «fixé» à «**1234**» (*vous pou
 
 Les premières commandes à exécuter permettent de récupérer la dernière version du système d'exploitation et de le mettre à jour :
 
-
-***Ne tapez pas le premier $ ou # dans les commandes ci-dessous. $ signifie que la commande doit être lancée par un utilisateur non privilégié, et # signifie que la commande doit être exécutée par l'utilisateur root***
-
 ```
 apt update
 ... (les dépôts logiciels sont consultés pour établir la liste en cours)
@@ -184,17 +180,15 @@ apt upgrade
 ```
 S’il y a des mises à jour, répondre oui en tapant 'y’ puis patienter le temps que les paquets soient récupérés et installés
 
-**Vous devrez exécuter cette paire de commandes de temps en temps pour maintenir votre système à jour** (astuce : on peut effectuer les deux étapes avec une seule ligne en les combinant avec le double ampersand (&&) : `apt update && apt upgrade` ).
+**Vous devrez exécuter cette paire de commandes de temps en temps pour maintenir votre système à jour** (*astuce* : on peut effectuer les deux étapes avec une seule ligne en les combinant avec le double ampersand (&&) : `apt update && apt upgrade` ).
 
 Avant de poursuivre, on va «*localiser*» notre système (date et heure, langue, clavier). Plusieurs manières de faire sont possibles, Armbian à l’instar de Raspberry OS, possède un outil de configuration : **armbian-config** à lancer en «root». En ligne de commandes, on peut également utiliser les commandes Debian classiques : **dpkg-reconfigure**
 
-Via armbian-config (date & heure, langue, clavier) :
+Via ``armbian-config`` (date & heure, langue, clavier) :
 
-\- Personal / Time Zone
-
-\- Personal / Locales
-
-\- Personal / Keyboard (*ne fonctionne pas en ssh, il faut un clavier connecté physiquement*), j’ai dû passer par `dpkg-reconfigure keyboard-configuration`
+- Personal / Time Zone
+- Personal / Locales
+- Personal / Keyboard (*ne fonctionne pas en ssh, il faut un clavier connecté physiquement*), j’ai dû passer par `dpkg-reconfigure keyboard-configuration`
 
 ### Activation du WIFI
 
@@ -209,7 +203,8 @@ Pour activer le WIFI, vous devez rejoindre un réseau WIFI.
 
 Vérifiez que le lien WIFI fonctionne via la commande `ifconfig` qui affichera les cartes réseau possédant une adresse IP. Celle qui nous intéresse est le lien «**wlan0**»
 
-Avant de débrancher le câble Ethernet, via le navigateur se connecter à l’adresse IP «Wifi» (différente de celle en RJ45 car les adresses MAC des cartes réseau sont normalement différentes).
+Avant de débrancher le câble Ethernet, via une nouvelle instance 'ssh' se connecter à l’adresse IP «Wifi» (différente de celle en RJ45 car les adresses MAC des cartes réseau sont normalement différentes):
+``ssh root@ADRESSE.IP.WIFI.OPiz2``
 
 ### Installation d'Octoprint
 
@@ -240,7 +235,7 @@ Quelques vérifications :
 
 Le dossier «pi» doit appartenir à pi:pi (utilisateur: pi, groupe: pi)
 
-4) A partir de maintenant les opérations seront réalisées en tant qu’utilisateur «pi» :
+4) **A partir de maintenant les opérations seront réalisées en tant qu’utilisateur «pi»** :
 
 `su -u pi bash`
 On vérifie qu’on est bien cet utilisateur :
@@ -254,9 +249,7 @@ Où est-on dans l’arborescence du système :
 On doit normalement être dans le dossier personnel de «pi» : **/home/pi**. Si ce n’était pas le cas, se déplacer dans ce dossier perso :
 
 `cd ~`
-
 ou
-
 `cd /home/pi`
 
 On est dans un sous-shell pour cet utilisateur pi. Il reste à installer Octoprint. La [documentation](https://community.octoprint.org/t/setting-up-octoprint-on-a-raspberry-pi-running-raspbian-or-raspberry-pi-os/2337) écrite par @foosel (Gina  Häußge, l’autrice d’Octoprint), bien que prévue pour un Raspberry, indique les étapes à suivre.
@@ -283,19 +276,21 @@ source venv/bin/activate
 
 `./OctoPrint/venv/bin/octoprint serve`
 
+***Cette étape (5) est nécessaire. Un dossier caché (.octoprint) est alors créé dans /home/pi. Il contient de nombreux autres dossiers ainsi que le fichier config.yaml, tous nécessaires au bon fonctionnement d'Octoprint***.
+
 [Note de foosel à propos de l’environnement virtuel :
 
 Un environnement virtuel n'est PAS une machine virtuelle. Considérez-le comme un dossier dédié au logiciel lui-même et à ses dépendances. Il n'y a pas de surcharge de ressources ici, à part une infime quantité de stockage supplémentaire pour certaines copies des binaires Python qui sont minuscules.]
 
-Si tout s'est bien passé lors du lancement de la dernière commande, vous devez vous connecter via le navigateur de votre ordinateur à l’adresse: http://your.board.ip.address:5000 puis suivre les instructions de l'assistant de configuration.
+Si tout s'est bien passé lors du lancement de la dernière commande (démarrage du serveur Octoprint), vous devez vous connecter via le navigateur de votre ordinateur à l’adresse: http://adresse.ip.lan_ou_wifi.opiz2:5000 puis suivre les instructions de l'assistant de configuration afin de finaliser l'installation du serveur Octoprint.
 
 Hello world, premier accès :
 
 ![](images/OPiz2/015.jpeg)
 
-Si la page s’affiche, comme ci-dessus, tout est bon ;-)
+Si la page s’affiche, comme ci-dessus, tout est bon :wink:
 
-Vous pouvez arrêter le serveur Octoprint dans la console en appuyant sur **Ctrl + C** et ensuite **Ctrl + D**, pour revenir au shell de l’utilisateur «root».
+Pour arrêter le serveur Octoprint, dans la console appuyer sur **Ctrl + C** et ensuite **Ctrl + D**, pour revenir au shell de l’utilisateur «root».
 
 ### Quelques «améliorations» (en tant que maître des lieux soit «root»)
 
@@ -312,7 +307,7 @@ Vérifiez que vous pouvez à nouveau vous connecter via votre navigateur, et si 
 
 ### Étapes supplémentaires pour se faciliter encore plus la vie
 
-A) **Ajouter à Octoprint des «superpouvoirs»** (redémarrage automatique, arrêt du système, …). Pour cela, vous devez accorder certains privilèges à l'utilisateur pi. Vous ne voulez pas accorder des droits sudo complets à cet utilisateur car si un bogue ou un exploit se produisait dans Octoprint, votre système serait en danger. La meilleure solution ici est de n'accorder à l'utilisateur pi que les commandes sudo nécessaires.
+A) **Ajouter à Octoprint des «superpouvoirs»** (redémarrage automatique, arrêt du système, …). Pour cela, vous devez accorder certains privilèges à l'utilisateur pi. Vous ne voulez pas accorder des droits sudo complets à cet utilisateur (si un bogue ou un exploit se produisait dans Octoprint, votre système serait en danger). La meilleure solution ici est de n'accorder à l'utilisateur pi que les commandes sudo nécessaires.
 
 Plutôt que modifier le fichier /etc/sudoers (à faire via «visudo»), on va ajouter deux fichiers dans le dossier /etc/sudoers,d/
 
@@ -361,7 +356,7 @@ MJPG Streamer Version: svn rev:
 ```
 Si une caméra est connectée via le seul port USB, le navigateur pointé sur http://<OPiz2.IP>:8080/?action=stream  devrait afficher un flux vidéo.
 
-Si c’est bon, on automatise le démarrage du serveur vidéo :
+Si c’est bon, on va **automatiser le démarrage du serveur vidéo** :
 
 - créer un dossier nommé «scripts» dans le home de pi :
 
@@ -413,7 +408,7 @@ function startUsb {
 
 \# we need this to prevent the later calls to vcgencmd from blocking
 \# I have no idea why, but that's how it is...
-vcgencmd version
+\#vcgencmd version   // A commenter car cette commande est spécifique au Raspberry Pi
 
 \# echo configuration
 echo camera: $camera
@@ -431,11 +426,11 @@ while true; do
 `    `sleep 120
 done
 ```
-- enregistrer ce fichier (CTRL+X en répondant Oui),
+- enregistrer ce fichier (CTRL+X en répondant Oui (ou CTRL+O pour enregistrer puis CTRL+X pour Quitter nano) ),
 
-- rendre ce fichier exécutable via :
+- rendre ce fichier exécutable et faire que 'pi' en soit "propriétaire" via :
 
-`chmod +x /home/pi/scripts/webcamDaemon`
+`chmod +x /home/pi/scripts/webcamDaemon && chown -R pi:pi /home/pi/scripts`
 
 - créer un fichier dans /etc/systemd/system/, nommé webcamd.service (**nano /etc/systemd/system/webcamd.service**) avec le contenu suivant :
 ```
@@ -478,14 +473,13 @@ system:
 
 ### Rendre Octoprint accessible via le port 80 au lieu de 5000
 
-Le mieux est d’utiliser «**haproxy**» en tant que proxy inverse plutôt que configurer Octoprint tournant sur le port 80. Pourquoi ?
+Le mieux est d’utiliser «**haproxy**» en tant que proxy inverse plutôt que configurer Octoprint tournant sur le port 80 (serveur Web).
+
+Pourquoi ?
 
 - OctoPrint n'a pas besoin de s'exécuter avec les privilèges de l'utilisateur root, ce qui serait nécessaire pour pouvoir se lier au port 80 à cause des restrictions des ports privilégiés de Linux.
-
 - Vous pouvez également rendre mjpg-streamer accessible sur le port 80.
-
 - Vous pouvez ajouter l'authentification à OctoPrint.
-
 - Selon la version de HAProxy, vous pouvez également utiliser SSL pour accéder à OctoPrint.
 
 #### Installer haproxy :
@@ -512,13 +506,13 @@ defaults
 `        `option forwardfor
 `        `maxconn 2000
 `        `timeout connect 5s
-`        `timeout client  15min
-`        `timeout server  15min
+`        `timeout client  15m
+`        `timeout server  15m
 
 frontend public
 `        `bind :::80 v4v6
-`        `use\_backend webcam if { path\_beg /webcam/ }
-`        `default\_backend octoprint
+`        `use_backend webcam if { path_beg /webcam/ }
+`        `default_backend octoprint
 
 backend octoprint
 `        `option forwardfor
@@ -586,13 +580,13 @@ pi@armbian:~$ ls -l /dev/gpiochip\*
 crw-rw---- 1 root gpio 254, 0 Dec 28 19:16 /dev/gpiochip0
 crw-rw---- 1 root gpio 254, 1 Dec 28 19:16 /dev/gpiochip1
 ```
-Les greffons Octoprint faisant appel aux gpios devraient fonctionner à condition d’utiliser les bonnes déclarations (différentes d’un Rpi ;-) ), à vérifier sur le site du fabricant en fonction du modéle.
+Les greffons Octoprint faisant appel aux gpios devraient fonctionner à condition d’utiliser les bonnes déclarations (différentes d’un Rpi :wink: ), à vérifier sur le site du fabricant en fonction du modêle.
 
-Pinout diagram de l’OPiz2 :
+Diagramme des broches (pins) de l’OPiz2 :
 
 ![](images/OPiz2/016.jpeg)
 
-### Dernière «amélioration», pouvoir accéder au contenu du dossier «pi» d’un ordinateur du réseau
+### Dernière «amélioration», permettre l’accès au contenu du dossier «pi» à partir d’un ordinateur du réseau
 
 Cela n’a rien d’obligatoire mais c’est bien pratique. Pouvoir accéder au contenu du dossier «pi» via le protocole SAMBA, en tapant l’adresse IP de la carte dans l’explorateur (ex : \\192.168.1.247).
 
@@ -639,5 +633,15 @@ Les greffons ajoutés sont [UI customizer](https://github.com/LazeMSS/OctoPrint-
 
 En espérant que ce document pourra être utile à ceux voulant se lancer avec cette carte Orange Pi Zéro 2
 
-:-)
+<EDIT>
+J'ai oublié de parler de la sauvegarde de la carte SD, une fois tout paramétré et fonctionnel.
 
+Comme sur la plupart de mes matériels informatiques, je fais régulièrement des sauvegardes (pour le cas où :wink: ). Pour réaliser des copies du contenu de mes cartes SD (ou clé USB ou disques durs éventuellement), j'utilise avec Windows le programme [ImageUSB](https://www.osforensics.com/tools/write-usb-images.html) (lien vers l'éditeur officiel). L'avantage de ce programme est de ne pas avoir besoin d'être installé sur le matériel d'où l'on effectue la copie.
+  
+Une fois la copie de l'image de la carte faite, un coup de 7zip (extension .7z) permet de réduire drastiquement la taille initiale de l'image (par défaut = taille de la carte SD) sans évidemment perte de données 😉 )
+
+J'ai donc une copie (en fait plusieurs en fonction des étapes de configuration du système) qui sont toutes de moins d'un giga octets (carte SD de 16 Go).
+
+D'ici quelques temps, je mettrai à disposition quelques scripts permettant d'accélérer les étapes de création du système (n'ayant plus la carte OrangePi Zero 2, retournée chez son propriétaire, la mienne devrait arriver d'ici quelques semaines pour tester et vérifier le bon fonctionnement des scripts d'installation).
+
+:smiley:
