@@ -62,7 +62,7 @@ La voie avait déjà été débroussaillée par diverses lectures dont la princi
 
 ## Installation
 
-Le processus d'installation est assez simple, à condition que vous sachiez déjà comment utiliser Linux. J’essaierai de détailler les différentes étapes.
+Le processus d'installation est assez simple, à condition que vous sachiez déjà comment utiliser Linux **a minima**. J’essaierai de détailler les différentes étapes.
 
 
 ### Préparation de la carte microSD
