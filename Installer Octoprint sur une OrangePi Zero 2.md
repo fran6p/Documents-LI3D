@@ -314,7 +314,7 @@ Plutôt que modifier le fichier /etc/sudoers (à faire via «visudo»), on va aj
 
 Une dernière commande concerne les droits de ces deux fichiers :
 
-`chmod 0440 /etc/sudoers,d/\*`
+`chmod 0440 /etc/sudoers.d/\*`
 
 B) Pouvoir utiliser une caméra
 
