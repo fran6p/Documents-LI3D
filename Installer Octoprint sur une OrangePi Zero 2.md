@@ -83,7 +83,7 @@ L’image utilisée sera celle basée sur une Debian (Bullseye), il en existe un
 
 ` `Vous devrez ensuite décompresser ce fichier avec le logiciel de décompression [7zip](https://www.7-zip.org/) (disponible pour Windows, Linux) ou avec [The Unarchiver (MacOS)](https://theunarchiver.com/). Les deux sont gratuits, seul 7Zip a été testé car je ne possède aucun équipement de la marque à la pomme.
 
-Les utilisateurs de Linux devront installer «p7zip» (la version «terminal de 7zip).
+Les utilisateurs de Linux devront installer «p7zip» (la version «terminal» de 7zip).
 
 Sur un système Debian/Ubuntu, ouvrir un terminal et saisir :
 
