@@ -24,13 +24,10 @@ La pénurie et/ou les prix pratiqués sont une des raisons pour laquelle on peut
 
 La carte SBC (Single Board Computer) utilisée ici une [OrangePi Zero 2](https://fr.aliexpress.com/item/1005001823662622.html?gatewayAdapt=glo2fra&pvid=1f8c2f19-6b28-4698-959b-c0074ada3e5b&_t=gps-id%3ApcDetailBottomMoreThisSeller%2Cscm-url%3A1007.13339.274681.0%2Cpvid%3A1f8c2f19-6b28-4698-959b-c0074ada3e5b%2Ctpp_buckets%3A668%232846%238112%231997&pdp_ext_f=%257B%2522sku_id%2522%253A%252212000017777234288%2522%252C%2522sceneId%2522%253A%25223339%2522%257D&pdp_pi=-1%253B28.3%253B-1%253B-1%2540salePrice%253BEUR%253Brecommend-recommend) :
 
-\- son facteur de forme est plus petit que celui d’un RPi3/4,
-
-\- tout aussi rapide,
-
-\- moins chère (normalement une trentaine d’euros mais plutôt autour de 35/40€ à ce jour)
-
-\- et surtout actuellement disponible.
+- son facteur de forme est plus petit que celui d’un RPi3/4,
+- tout aussi rapide,
+- moins chère (normalement une trentaine d’euros mais plutôt autour de 35/40€ à ce jour)
+- et surtout actuellement disponible.
 
 Cette carte existe en deux versions : 512Mo / 1 Go de RAM (la différence de prix entre les deux n’est pas insurmontable).
 
@@ -46,17 +43,12 @@ Cette carte peut fonctionner avec plusieurs systèmes d’exploitation : un [fo
 
 Récapitulatif du matériel :
 
-\- carte OrangePi Zero 2 (nommée OPiz2 dans le reste du document)
-
-\- alimentation 5V/2A,
-
-\- un câble USB-C (seules les broches 5V et de masse sont utilisées, un câble de données n’est donc pas indispensable),
-
-\- une carte µSD (8GB ou 16GB ou plus)
-
-\- optionnel, une webcam
-
-\- un HUB USB ou une [carte additionnelle à monter sur la OPiz2 ](https://www.aliexpress.com/item/32770665186.html?gatewayAdapt=glo2fra)car d’origine un seul port USB est implanté sur la carte
+- carte OrangePi Zero 2 (nommée OPiz2 dans le reste du document)
+- alimentation 5V/2A,
+- un câble USB-C (seules les broches 5V et de masse sont utilisées, un câble de données n’est donc pas indispensable),
+- une carte µSD (8GB ou 16GB ou plus)
+- optionnel, une webcam
+- un HUB USB ou une [carte additionnelle à monter sur la OPiz2 ](https://www.aliexpress.com/item/32770665186.html?gatewayAdapt=glo2fra)car d’origine un seul port USB est implanté sur la carte
 
 La voie avait déjà été débroussaillée par diverses lectures dont la principale, [ce sujet](https://blog.cyril.by/fr/3d-printers/installing-octoprint-on-orange-pi-zero-2) de Blog. N’ayant pas exactement suivi ce qui y est décrit, je relate ici ce que j’ai fait pour obtenir au final quelque chose de fonctionnel. En espérant que je n’aurai rien oublié et que les étapes suivies permettront à d’autres d’obtenir le même résultat.
 
@@ -81,7 +73,7 @@ L’image utilisée sera celle basée sur une Debian (Bullseye), il en existe un
 
 ![](images/OPiz2/003.jpeg)
 
-` `Vous devrez ensuite décompresser ce fichier avec le logiciel de décompression [7zip](https://www.7-zip.org/) (disponible pour Windows, Linux) ou avec [The Unarchiver (MacOS)](https://theunarchiver.com/). Les deux sont gratuits, seul 7Zip a été testé car je ne possède aucun équipement de la marque à la pomme.
+Vous devrez ensuite décompresser ce fichier avec le logiciel de décompression [7zip](https://www.7-zip.org/) (disponible pour Windows, Linux) ou avec [The Unarchiver (MacOS)](https://theunarchiver.com/). Les deux sont gratuits, seul 7Zip a été testé car je ne possède aucun équipement de la marque à la pomme.
 
 Les utilisateurs de Linux devront installer «p7zip» (la version «terminal» de 7zip).
 
@@ -222,7 +214,6 @@ Pour installer Octoprint, nous devons d'abord créer un utilisateur à faible pr
 
 `passwd pi`
 ou
-
 `echo -e "orangepi\norangepi\n" | (passwd pi)`
 
 4) Installation des paquets nécessaires :
@@ -238,6 +229,7 @@ Le dossier «pi» doit appartenir à pi:pi (utilisateur: pi, groupe: pi)
 4) **A partir de maintenant les opérations seront réalisées en tant qu’utilisateur «pi»** :
 
 `su -u pi bash`
+
 On vérifie qu’on est bien cet utilisateur :
 
 `whoami`
@@ -278,9 +270,10 @@ source venv/bin/activate
 
 ***Cette étape (5) est nécessaire. Un dossier caché (.octoprint) est alors créé dans /home/pi. Il contient de nombreux autres dossiers ainsi que le fichier config.yaml, tous nécessaires au bon fonctionnement d'Octoprint***.
 
-[Note de foosel à propos de l’environnement virtuel :
+[Note de foosel à propos de l’environnement virtuel :]
 
-Un environnement virtuel n'est PAS une machine virtuelle. Considérez-le comme un dossier dédié au logiciel lui-même et à ses dépendances. Il n'y a pas de surcharge de ressources ici, à part une infime quantité de stockage supplémentaire pour certaines copies des binaires Python qui sont minuscules.]
+> Un environnement virtuel n'est PAS une machine virtuelle. Considérez-le comme un dossier dédié au logiciel lui-même et à ses dépendances.
+> Il n'y a pas de surcharge de ressources ici, à part une infime quantité de stockage supplémentaire pour certaines copies des binaires Python qui sont minuscules.
 
 Si tout s'est bien passé lors du lancement de la dernière commande (démarrage du serveur Octoprint), vous devez vous connecter via le navigateur de votre ordinateur à l’adresse: http://adresse.ip.lan_ou_wifi.opiz2:5000 puis suivre les instructions de l'assistant de configuration afin de finaliser l'installation du serveur Octoprint.
 
@@ -313,7 +306,8 @@ Plutôt que modifier le fichier /etc/sudoers (à faire via «visudo»), on va aj
 
 1) Créer un fichier /etc/sudoers.d/octoprint-shutdown (en root) avec le contenu suivant :
 
-`pi ALL=NOPASSWD: /sbin/shutdown` 
+`pi ALL=NOPASSWD: /sbin/shutdown`
+
 2) Créer un fichier /etc/sudoers.d/octoprint-service (en root) avec le contenu suivant :
 
 `pi ALL=NOPASSWD: /usr/sbin/service` 
@@ -372,58 +366,57 @@ Soit, plus rapide : `>/home/pi/scripts/webcamDaemon`
 ```
 #!/bin/bash
 
-MJPGSTREAMER\_HOME=/home/pi/mjpg-streamer/mjpg-streamer-experimental
-MJPGSTREAMER\_INPUT\_USB="input\_uvc.so"
-MJPGSTREAMER\_INPUT\_RASPICAM="input\_raspicam.so"
+MJPGSTREAMER_HOME=/home/pi/mjpg-streamer/mjpg-streamer-experimental
+MJPGSTREAMER_INPUT_USB="input_uvc.so"
+MJPGSTREAMER_INPUT_RASPICAM="input_raspicam.so"
 
-\# init configuration
+# init configuration
 camera="auto"
-camera\_usb\_options="-r 640x480 -f 10"
-camera\_raspi\_options="-fps 10"
+camera_usb_options="-r 640x480 -f 10"
+camera_raspi_options="-fps 10"
 
 if [ -e "/boot/octopi.txt" ]; then
-`    `source "/boot/octopi.txt"
+    source "/boot/octopi.txt"
 fi
 
-\# runs MJPG Streamer, using the provided input plugin + configuration
+# runs MJPG Streamer, using the provided input plugin + configuration
 function runMjpgStreamer {
-`    `input=$1
-`    `pushd $MJPGSTREAMER\_HOME
-`    `echo Running ./mjpg\_streamer -o "output\_http.so -w ./www" -i "$input"
-`    `LD\_LIBRARY\_PATH=. ./mjpg\_streamer -o "output\_http.so -w ./www" -i "$input"
-`    `popd
+    input=$1
+    pushd $MJPGSTREAMER_HOME
+    echo Running ./mjpg_streamer -o "output_http.so -w ./www" -i "$input"
+    LD_LIBRARY_PATH=. ./mjpg_streamer -o "output_http.so -w ./www" -i "$input"
+    popd
 }
 
-\# starts up the RasPiCam
+# starts up the RasPiCam
 function startRaspi {
-`    `logger "Starting Raspberry Pi camera"
-`    `runMjpgStreamer "$MJPGSTREAMER\_INPUT\_RASPICAM $camera\_raspi\_options"
+    logger "Starting Raspberry Pi camera"
+    runMjpgStreamer "$MJPGSTREAMER_INPUT_RASPICAM $camera_raspi_options"
 }
 
-\# starts up the USB webcam
+# starts up the USB webcam
 function startUsb {
-`    `logger "Starting USB webcam"
-`    `runMjpgStreamer "$MJPGSTREAMER\_INPUT\_USB $camera\_usb\_options"
+    logger "Starting USB webcam"
+    runMjpgStreamer "$MJPGSTREAMER_INPUT_USB $camera_usb_options"
 }
 
-\# we need this to prevent the later calls to vcgencmd from blocking
-\# I have no idea why, but that's how it is...
-\#vcgencmd version   // A commenter car cette commande est spécifique au Raspberry Pi
+# we need this to prevent the later calls to vcgencmd from blocking
+# I have no idea why, but that's how it is...
+#vcgencmd version   // A commenter car cette commande est spécifique au Raspberry Pi
 
-\# echo configuration
+# echo configuration
 echo camera: $camera
-echo usb options: $camera\_usb\_options
-echo raspi options: $camera\_raspi\_options
+echo usb options: $camera_usb_options
+echo raspi options: $camera_raspi_options
 
-\# keep mjpg streamer running if some camera is attached
+# keep mjpg streamer running if some camera is attached
 while true; do
-`    `if [ -e "/dev/video0" ] && { [ "$camera" = "auto" ] || [ "$camera" = "usb" ] ; }; then
-`        `startUsb
-`    `elif [ "`vcgencmd get\_camera`" = "supported=1 detected=1" ] && { [ "$camera" = "auto" ] || [ "$camera" = "raspi" ] ; }; then
-`        `startRaspi
-`    `fi
-
-`    `sleep 120
+    if [ -e "/dev/video0" ] && { [ "$camera" = "auto" ] || [ "$camera" = "usb" ] ; }; then
+        startUsb
+    elif [ "`vcgencmd get_camera`" = "supported=1 detected=1" ] && { [ "$camera" = "auto" ] || [ "$camera" = "raspi" ] ; }; then
+        startRaspi
+    fi
+    sleep 120
 done
 ```
 - enregistrer ce fichier (CTRL+X en répondant Oui (ou CTRL+O pour enregistrer puis CTRL+X pour Quitter nano) ),
@@ -436,7 +429,7 @@ done
 ```
 [Unit]
 Description=Camera streamer for OctoPrint
-After=network-online-target OctoPrint.service
+After=network-online-target octoprint.service
 Wants=network-online.target
 
 [Service]
@@ -460,15 +453,15 @@ systemctl start webcamd
 Pour pouvoir arrêter / démarrer ce service via Octoprint, il faut ajouter la section suivante dans le fichier config,yaml (dans le dossier caché .octoprint => **/home/pi/.octoprint/config.yaml**)
 ```
 system:
-`  `actions:
-`   `- action: streamon
-`     `command: sudo systemctl start webcamd
-`     `confirm: false
-`     `name: Start video stream
-`   `- action: streamoff
-`     `command: sudo systemctl stop webcamd
-`     `confirm: false
-`     `name: Stop video stream
+    actions:
+    - action: streamon
+      command: sudo systemctl start webcamd
+      confirm: false
+      name: Start video stream
+    - action: streamoff
+      command: sudo systemctl stop webcamd
+      confirm: false
+      name: Stop video stream
 ```
 
 ### Rendre Octoprint accessible via le port 80 au lieu de 5000
@@ -489,38 +482,38 @@ Pourquoi ?
 - modifier le fichier de configuration /etc/haproxy/haproxy.cfg :
 ```
 global
-`        `maxconn 4096
-`        `user haproxy
-`        `group haproxy
-`        `daemon
-`        `log 127.0.0.1 local0 debug
+    maxconn 4096
+    user haproxy
+    group haproxy
+    daemon
+    log 127.0.0.1 local0 debug
 
 defaults
-`        `log     global
-`        `mode    http
-`        `option  httplog
-`        `option  dontlognull
-`        `retries 3
-`        `option redispatch
-`        `option http-server-close
-`        `option forwardfor
-`        `maxconn 2000
-`        `timeout connect 5s
-`        `timeout client  15m
-`        `timeout server  15m
+    log     global
+    mode    http
+    option  httplog
+    option  dontlognull
+    retries 3
+    option redispatch
+    option http-server-close
+    option forwardfor
+    maxconn 2000
+    timeout connect 5s
+    timeout client  15m
+    timeout server  15m
 
 frontend public
-`        `bind :::80 v4v6
-`        `use_backend webcam if { path_beg /webcam/ }
-`        `default_backend octoprint
+    bind :::80 v4v6
+    use_backend webcam if { path_beg /webcam/ }
+    default_backend octoprint
 
 backend octoprint
-`        `option forwardfor
-`        `server octoprint1 127.0.0.1:5000
+    option forwardfor
+    server octoprint1 127.0.0.1:5000
 
 backend webcam
-`        `http-request replace-path /webcam/(.\*)   /\1
-`        `server webcam1  127.0.0.1:8080
+    http-request replace-path /webcam/(.\*)   /\1
+    server webcam1  127.0.0.1:8080
 ```
 Ainsi, Octoprint sera accessible via http://<Opiz2.IP>/ et le flux de la Webcam sera accessible via http://<Opiz2.IP>/webcam/
 
