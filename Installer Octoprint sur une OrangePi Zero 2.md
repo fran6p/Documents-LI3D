@@ -338,15 +338,15 @@ Il ne devrait pas y avoir d’erreurs. Un test avec :
 devrait retourner quelque chose du genre :
 ```
 MJPG Streamer Version: svn rev:
-` `i: Using V4L2 device.: /dev/video0
-` `i: Desired Resolution: 640 x 480
-` `i: Frames Per Second.: 5
-` `i: Format............: MJPEG
+   i: Using V4L2 device.: /dev/video0
+   i: Desired Resolution: 640 x 480
+   i: Frames Per Second.: 5
+   i: Format............: MJPEG
 [...]
-` `o: www-folder-path...: disabled
-` `o: HTTP TCP port.....: 8080
-` `o: username:password.: disabled
-` `o: commands..........: enabled
+   o: www-folder-path...: disabled
+   o: HTTP TCP port.....: 8080
+   o: username:password.: disabled
+   o: commands..........: enabled
 ```
 Si une caméra est connectée via le seul port USB, le navigateur pointé sur http://<OPiz2.IP>:8080/?action=stream  devrait afficher un flux vidéo.
 
