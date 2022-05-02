@@ -41,7 +41,7 @@ Cette valeur pourra ensuite être utilisée dans «*configuration_adv.h*», sect
    //#define PROBING_MARGIN_BACK PROBING_MARGIN
 #endif
 ```
-Ces paramètres précisent les limites du palpage avec le [Gcode G29](https://marlinfw.org/docs/gcode/G029.html). C’est **une portion du plateau d’impression** car les capteurs / sondes ne sont généralement pas en mesure d'atteindre tous les points que la buse peut atteindre. Il faut donc tenir compte des décalages XY de la sonde lors de la définition de ces limites.
+Ces paramètres précisent les limites du palpage avec le [Gcode G29](https://marlinfw.org/docs/gcode/G029.html). Ce n’est qu'**une portion du plateau d’impression** car les capteurs / sondes ne sont généralement pas en mesure d'atteindre tous les points que la buse peut atteindre. Il faut donc tenir compte des décalages XY de la sonde lors de la définition de ces limites.
 
 Dans **Marlin 1.1.x**, la marge de «sécurité» était déclarée via la directive :
 
