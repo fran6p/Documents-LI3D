@@ -35,10 +35,10 @@ Cette valeur pourra ensuite être utilisée dans «*configuration_adv.h*», sect
 
 ```
 #if PROBE_SELECTED && !IS_KINEMATIC
-` `//#define PROBING_MARGIN_LEFT PROBING_MARGIN
-` `//#define PROBING_MARGIN_RIGHT PROBING_MARGIN
-` `//#define PROBING_MARGIN_FRONT PROBING_MARGIN
-` `//#define PROBING_MARGIN_BACK PROBING_MARGIN
+   //#define PROBING_MARGIN_LEFT PROBING_MARGIN
+   //#define PROBING_MARGIN_RIGHT PROBING_MARGIN
+   //#define PROBING_MARGIN_FRONT PROBING_MARGIN
+   //#define PROBING_MARGIN_BACK PROBING_MARGIN
 #endif
 ```
 Ces paramètres précisent les limites du palpage avec le [Gcode G29](https://marlinfw.org/docs/gcode/G029.html). C’est **une portion du plateau d’impression** car les capteurs / sondes ne sont généralement pas en mesure d'atteindre tous les points que la buse peut atteindre. Il faut donc tenir compte des décalages XY de la sonde lors de la définition de ces limites.
@@ -69,18 +69,21 @@ où XXX et YYY sont les décalages **en millimètres** (offset) du centre du cap
 - les autres positions possibles sont l'**arrière-gauche** et l'**avant-droit** (**une valeur positive et une négative**).
 
 Marlin fournit un dessin en ASCII pour le rappeler :
+
 ```
-` `\*     +-- BACK ---+
-` `\*     |    [+]    |
-` `\*   L |        1  | R <-- Example "1" (right+,  back+)
-` `\*   E |  2        | I <-- Example "2" ( left-,  back+)
-` `\*   F |[-]  N  [+]| G <-- Nozzle
-` `\*   T |       3   | H <-- Example "3" (right+, front-)
-` `\*     | 4         | T <-- Example "4" ( left-, front-)
-` `\*     |    [-]    |
-` `\*     O-- FRONT --+
+*     +-- BACK ---+
+*     |    [+]    |
+*   L |        1  | R <-- Example "1" (right+,  back+)
+*   E |  2        | I <-- Example "2" ( left-,  back+)
+*   F |[-]  N  [+]| G <-- Nozzle
+*   T |       3   | H <-- Example "3" (right+, front-)
+*     | 4         | T <-- Example "4" ( left-, front-)
+*     |    [-]    |
+*     O-- FRONT --+
 ```
+
 Pour rappel avec un Marlin 1.1.9.1, la position du capteur était définie à l'aide des constantes suivantes :
+
 ```
 #define X_PROBE_OFFSET_FROM_EXTRUDER [XXX]   // X offset: -left  +right  [of the nozzle]
 #define Y_PROBE_OFFSET_FROM_EXTRUDER [YYY]   // Y offset: -front +behind [the nozzle]
@@ -90,7 +93,7 @@ Pour rappel avec un Marlin 1.1.9.1, la position du capteur était définie à l'
 
 Dans les dessins suivants, la buse, le capteur et les décalages sont définis par :
 
-` `![](images/ABL/001.jpeg)
+![](images/ABL/001.jpeg)
 
 Quatre positions sont possibles pour le capteur (*une cinquième existe pour la buse faisant office de capteur, dans ce cas il n’y a plus de décalage puisque palpeur et buse sont à la même position* :smirk: ), ce qui donne les schémas suivants pour les limites de la zone du capteur (zone rouge transparente) :
 
