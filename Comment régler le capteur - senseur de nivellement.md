@@ -27,7 +27,7 @@ En premier lieu, il faut déterminer le décalage du capteur (par mesures direct
 
 ***Les directives de compilation diffèrent en fonction de la version de Marlin***
 
-Pour la branche 2.0.x de Marlin, une seule directive définit la marge de «sécurité» utilisée par le capteur pour rester en dehors des bords du lit, par exemple pour éviter les pinces de maintien d’une vitre sur le plateau. Cette marge définit le décalage par rapport au bord du lit :
+Pour la**branche 2.0.x de Marlin**, une seule directive définit la marge de «sécurité» utilisée par le capteur pour rester en dehors des bords du lit, par exemple pour éviter les pinces de maintien d’une vitre sur le plateau. Cette marge définit le décalage par rapport au bord du lit :
 
 - `PROBING_MARGIN`  (*configuration.h*)
 
