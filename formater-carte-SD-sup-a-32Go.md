@@ -44,9 +44,11 @@ Autre moyen de formater un support de stockage :
 ## En images :
 
 ![](images/cartesSD/002.jpeg)
+
 Liste des disques (bien choisir le «bon»)
 
 ![](images/cartesSD/003.jpeg)
+
 Liste des disques ou des volumes
 
 ![](images/cartesSD/004.jpeg)
@@ -58,12 +60,15 @@ Liste des disques ou des volumes
 ### Création d’une partition
 
 ![](images/cartesSD/006.jpeg)
+
 Formatage de la partition (impossible d’utiliser des secteurs de 4096 octets)
 
 ![](images/cartesSD/007.jpeg)
+
 Liste des systèmes de fichiers disponibles et leurs capacités
 
 ![](images/cartesSD/008.jpeg)
+
 Quitter Diskpart
 
 ## Résultat :
@@ -78,22 +83,28 @@ Plus d’informations sur Diskpart : [ici](https://www.commentcamarche.net/info
 **Pour pouvoir formater une carte SD (μSD) ou une clé USB (ou un disque dur) de plus de 32 Go avec une sectorisation de 4096 octets (4 ko)**, on peut le faire mais il faut passer par un outil externe, par exemple [AOMEI Partition Assistant](https://www2.aomeisoftware.com/download/pa/PAssist_Std.exe) en version «free» ou payante, la version freeware est suffisante avec des publicités ou des rappels réguliers à passer à une version payante.
 
 ![](images/cartesSD/010.jpeg)
+
 Sélectionner le disque à formater, puis un clic droit et choisir l’option «formater le disque»
 
 ![](images/cartesSD/011.jpeg)
+
 Choisir le système de fichiers et la taille de sectorisation (cluster), là on peut choisir 4ko, valider par OK
 Cliquer sur l’opération en attente => Appliquer
 
 ![](images/cartesSD/012.jpeg) 
+
 Lire le récapitulatif puis cliquer «Exécuter»
 
 ![](images/cartesSD/013.jpeg)
+
 Appliquer les modifications
 
 ![](images/cartesSD/014.jpeg)
+
 Confirmer
 
 ![](images/cartesSD/015.jpeg)
+
 Après un certain temps, le formatage est terminé
 
 ### Résultat dans l’explorateur :
