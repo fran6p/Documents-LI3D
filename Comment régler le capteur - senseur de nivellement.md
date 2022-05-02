@@ -1,0 +1,221 @@
+﻿**Paramétrer Marlin pour un capteur de nivellement (Z probe)**
+
+De nombreuses questions se posent régulièrement sur ce point.
+
+Ce sujet tente de faire le point sur la manière dont Marlin gère les emplacements du capteur de nivellement par rapport à la buse. [Le type de capteur](https://marlinfw.org/docs/configuration/probes.html) n'a pas d'importance, il peut s'agir d'un BLTouch (ou d’un clone / copie), d’un Touchmi, d'un capteur inductif, capacitif, …, tant que l’on est en mesure de déterminer le décalage de celui-ci par rapport à la buse (***ceci ne s’applique pas aux capteurs où la buse elle-même fait office de sonde (piezo, pression, …)***).
+
+Pour commencer, on suppose que la buse ne peut qu’atteindre la totalité de la surface du lit d’impression, sans espace supplémentaire. Ainsi les limites du plateau utilisées sont celles définies dans le fichier «configuration.h» à la section [machine] :
+
+// The size of the print bed
+#define X\_BED\_SIZE 200
+#define Y\_BED\_SIZE 200
+
+// Travel limits (mm) after homing, corresponding to endstop positions.
+#define X\_MIN\_POS 0
+#define Y\_MIN\_POS 0
+#define Z\_MIN\_POS 0
+#define X\_MAX\_POS X\_BED\_SIZE
+#define Y\_MAX\_POS Y\_BED\_SIZE
+#define Z\_MAX\_POS 200
+
+Cette hypothèse permet d'éviter que le chariot portant la tête ne se positionne à des emplacements pouvant provoquer des dommages au matériel. Cependant si des déplacements supplémentaires sont possibles, un décalage complémentaire pourra ensuite être ajouté aux limites.
+
+En premier lieu, il faut déterminer le décalage du capteur (par mesures directes ou en se fiant aux informations (quand / si elles sont fournies) du support de capteur imprimable récupéré sur un des nombreux sites de partage sur Internet ([Thingiverse](https://www.thingiverse.com/) ou un autre) par rapport à la buse.
+
+1. ## **Marlin**
+
+***Les directives de compilation diffèrent en fonction de la version de Marlin***
+
+Pour la branche 2.0.x de Marlin, une seule directive définit la marge de «sécurité» utilisée par le capteur pour rester en dehors des bords du lit, par exemple pour éviter les pinces de maintien d’une vitre sur le plateau. Cette marge définit le décalage par rapport au bord du lit :
+
+- PROBING_MARGIN (configuration.h)
+
+Cette valeur pourra ensuite être utilisée dans «configuration\_adv.h», section [Probing Margins] :
+
+
+#if PROBE\_SELECTED && !IS\_KINEMATIC
+` `//#define PROBING\_MARGIN\_LEFT PROBING\_MARGIN
+` `//#define PROBING\_MARGIN\_RIGHT PROBING\_MARGIN
+` `//#define PROBING\_MARGIN\_FRONT PROBING\_MARGIN
+` `//#define PROBING\_MARGIN\_BACK PROBING\_MARGIN
+#endif
+
+Ces paramètres précisent les limites du palpage avec le Gcode G29. C’est **une portion du plateau d’impression** car les capteurs / sondes ne sont généralement pas en mesure d'atteindre tous les points que la buse peut atteindre. Tenir compte des décalages XY de la sonde lors de la définition de ces limites.
+
+Dans Marlin 1.1.x, la marge de «sécurité» était déclarée via la directive :
+
+- MIN\_PROBE\_EDGE
+
+Les positions limites (positions absolues) que le capteur pouvait atteindre étaient déclarées ensuite, toujours dans «configuration.h», dans la section dépendant du mode de nivellement :
+
+`  `// Set the boundaries for probing (where the probe can reach).
+`  `//#define LEFT\_PROBE\_BED\_POSITION MIN\_PROBE\_EDGE
+`  `//#define RIGHT\_PROBE\_BED\_POSITION (X\_BED\_SIZE - MIN\_PROBE\_EDGE)
+`  `//#define FRONT\_PROBE\_BED\_POSITION MIN\_PROBE\_EDGE
+`  `//#define BACK\_PROBE\_BED\_POSITION (Y\_BED\_SIZE - MIN\_PROBE\_EDGE)
+## **Décalage du capteur**
+Dans la version actuelle de Marlin (au moment de l’écriture, la 2.0.9.1), les valeurs de décalage sont déclarées dans un tableau :
+
+#define NOZZLE\_TO\_PROBE\_OFFSET { XXX, YYY, ZZZ }
+
+où XXX et YYY sont les décalages **entiers** (offset) du centre du capteur par rapport à la buse (***vue de l'avant de la machine***) :
+
+- Si les **deux valeurs** sont **positives**, le capteur est situé à l'**arrière-droit**,
+- si les **deux** sont **négatives**, la position est à l’**avant-gauche** ,
+- les autres positions possibles sont l'**arrière-gauche** et l'**avant-droit** (**une valeur positive et une négative**).
+
+Marlin fournit un dessin en ASCII pour le rappeler :
+
+` `\*     +-- BACK ---+
+` `\*     |    [+]    |
+` `\*   L |        1  | R <-- Example "1" (right+,  back+)
+` `\*   E |  2        | I <-- Example "2" ( left-,  back+)
+` `\*   F |[-]  N  [+]| G <-- Nozzle
+` `\*   T |       3   | H <-- Example "3" (right+, front-)
+` `\*     | 4         | T <-- Example "4" ( left-, front-)
+` `\*     |    [-]    |
+` `\*     O-- FRONT --+
+
+Pour rappel avec un Marlin 1.1.9.1, la position du capteur était définie à l'aide des constantes suivantes :
+
+#define X\_PROBE\_OFFSET\_FROM\_EXTRUDER [XXX]   // X offset: -left  +right  [of the nozzle]
+
+#define Y\_PROBE\_OFFSET\_FROM\_EXTRUDER [YYY]   // Y offset: -front +behind [the nozzle]
+## **Limites de la zone du capteur**
+Dans les dessins suivants, la buse, le capteur et les décalages sont définis par :
+
+` `![](images/ABL/001.jpeg)
+
+Quatre positions sont possibles pour le capteur (*une cinquième existe pour la buse faisant office de capteur, dans ce cas il n’y a plus de décalage puisque palpeur et buse sont à la même position* ;-) ), ce qui donne les schémas suivants pour les limites de la zone du capteur (zone rouge transparente) :
+1. ## **1. Capteur à l'arrière-droit :**
+![](images/ABL/002.jpeg)
+
+Le capteur peut atteindre les bordures arrière et droite, les limites sont donc fixées par :
+
+**Marlin 1.x *:***
+
+#define LEFT\_PROBE\_BED\_POSITION (X\_PROBE\_OFFSET\_FROM\_EXTRUDER)
+
+#define RIGHT\_PROBE\_BED\_POSITION (X\_BED\_SIZE)
+
+#define FRONT\_PROBE\_BED\_POSITION (Y\_PROBE\_OFFSET\_FROM\_EXTRUDER)
+
+#define BACK\_PROBE\_BED\_POSITION (Y\_BED\_SIZE)
+
+**Marlin 2.x *:***
+
+Pas besoin de déclarer les positions gauche, droite, avant, arrière explicitement car avec cette version de Marlin la calcul est automatique à partir de la déclaration NOZZLE\_TO\_PROBE\_OFFSET
+
+Si un décalage de «sécurité» a été défini par :
+
+- #define **MIN\_PROBE\_EDGE** [valeur] (**Marlin 1.x**) ou
+- #define **PROBING\_MARGIN** [valeur] (**Marlin 2.x**)
+
+` `//#define PROBING\_MARGIN\_LEFT PROBING\_MARGIN
+` `//#define PROBING\_MARGIN\_RIGHT PROBING\_MARGIN
+` `//#define PROBING\_MARGIN\_FRONT PROBING\_MARGIN
+` `//#define PROBING\_MARGIN\_BACK PROBING\_MARGIN
+
+dans le fichier «configuration.h», **les limites de palpage seront modifiées pour en tenir compte** (**Marlin 2.x**), ce qui donnera la zone en rouge foncé pour la surface palpée (t = MIN\_PROBE\_EDGE / PROBING\_MARGIN) :
+
+![](images/ABL/003.jpeg)
+
+Pour un **Marlin 1.x**, les limites deviennent :
+
+#define LEFT\_PROBE\_BED\_POSITION (X\_PROBE\_OFFSET\_FROM\_EXTRUDER + MIN\_PROBE\_EDGE)
+
+#define RIGHT\_PROBE\_BED\_POSITION (X\_BED\_SIZE - MIN\_PROBE\_EDGE)
+
+#define FRONT\_PROBE\_BED\_POSITION (Y\_PROBE\_OFFSET\_FROM\_EXTRUDER + MIN\_PROBE\_EDGE)
+
+#define BACK\_PROBE\_BED\_POSITION (Y\_BED\_SIZE - MIN\_PROBE\_EDGE)
+1. ## **2. Capteur à l'arrière-gauche :**
+![](images/ABL/004.jpeg)
+
+Le capteur peut atteindre les bords arrière et gauche, les limites sont donc fixées par (**Marlin 1.x**) :
+
+#define LEFT\_PROBE\_BED\_POSITION (MIN\_PROBE\_EDGE)
+
+#define RIGHT\_PROBE\_BED\_POSITION (X\_BED\_SIZE  + X\_PROBE\_OFFSET\_FROM\_EXTRUDER - MIN\_PROBE\_EDGE)
+
+#define FRONT\_PROBE\_BED\_POSITION (Y\_PROBE\_OFFSET\_FROM\_EXTRUDER + MIN\_PROBE\_EDGE)
+
+#define BACK\_PROBE\_BED\_POSITION (Y\_BED\_SIZE - MIN\_PROBE\_EDGE)
+1. ## **3. Capteur à l'avant-gauche :**
+![](images/ABL/005.jpeg)
+
+Le capteur peut atteindre les bords avant et gauche, les limites sont donc fixées par (**Marlin 1.x**) :
+
+#define LEFT\_PROBE\_BED\_POSITION (MIN\_PROBE\_EDGE)
+
+#define RIGHT\_PROBE\_BED\_POSITION (X\_BED\_SIZE  + X\_PROBE\_OFFSET\_FROM\_EXTRUDER - MIN\_PROBE\_EDGE))
+
+#define FRONT\_PROBE\_BED\_POSITION (MIN\_PROBE\_EDGE)
+
+#define BACK\_PROBE\_BED\_POSITION (Y\_BED\_SIZE + Y\_PROBE\_OFFSET\_FROM\_EXTRUDER - MIN\_PROBE\_EDGE)
+1. ## **4. Capteur à l'avant-droit :**
+![](images/ABL/006.jpeg)
+
+Le capteur peut atteindre les bords avant et droit, les limites sont donc fixées par (**Marlin 1.x**) :
+
+#define LEFT\_PROBE\_BED\_POSITION (X\_PROBE\_OFFSET\_FROM\_EXTRUDER + MIN\_PROBE\_EDGE)
+
+#define RIGHT\_PROBE\_BED\_POSITION (X\_BED\_SIZE  - MIN\_PROBE\_EDGE)
+
+#define FRONT\_PROBE\_BED\_POSITION (MIN\_PROBE\_EDGE)
+
+#define BACK\_PROBE\_BED\_POSITION (Y\_BED\_SIZE + Y\_PROBE\_OFFSET\_FROM\_EXTRUDER - MIN\_PROBE\_EDGE)
+
+Les bases de la définition des limites physiques de la zone du capteur ont été passées en revue.
+1. ## **CAS OÙ LA BUSE PEUT SE DÉPLACER EN DEHORS DES LIMITES DU PLATEAU**
+Cela devient légèrement plus compliqué lorsqu'il y a un espace de déplacement supplémentaire.
+
+L'espace de déplacement supplémentaire peut être déclaré dans le fichier de configuration :
+
+// Travel limits (mm) after homing, corresponding to endstop positions.
+
+#define X\_MIN\_POS [XX]
+
+#define Y\_MIN\_POS [YY]
+
+où [XX] et [YY] sont les valeurs de décalage entre le contacteur de fin de course (endstop) et l'origine (les flèches orange représentent X\_MIN\_POS et Y\_MIN\_POS (*homing offset*)) :
+
+![](images/ABL/007.jpeg)
+
+Résultats des constantes de décalage pour une sonde à l’arrière-droit, exemple pour un **Marlin 1.x** :
+
+#define LEFT\_PROBE\_BED\_POSITION (X\_PROBE\_OFFSET\_FROM\_EXTRUDER **+ X\_MIN\_POS** + MIN\_PROBE\_EDGE)
+
+#define RIGHT\_PROBE\_BED\_POSITION (X\_BED\_SIZE - MIN\_PROBE\_EDGE)
+
+#define FRONT\_PROBE\_BED\_POSITION (Y\_PROBE\_OFFSET\_FROM\_EXTRUDER **+ Y\_MIN\_POS** + MIN\_PROBE\_EDGE)
+
+#define BACK\_PROBE\_BED\_POSITION (Y\_BED\_SIZE - MIN\_PROBE\_EDGE)
+
+Idem si la tête d'impression est capable de se déplacer plus loin sur l'axe X ou Y aux autres extrémités des axes, on pourra «augmenter la taille maximale du plateau. Par exemple si la buse peut se déplacer de 20mm à droite et en arrière du plateau :
+
+#define X\_MAX\_POS X\_BED\_SIZE + 20
+#define Y\_MAX\_POS Y\_BED\_SIZE + 20
+## **Particularité de Marlin 2.0.x**
+Marlin 2.0.x utilise les **décalages des bords du lit plutôt que des positions absolues**. Par analogie avec les graphiques précédents, on peut dessiner les limites du lit (l'exemple ci-dessous suppose une sonde montée à l'arrière et à droite)
+
+![](images/ABL/008.jpeg)
+
+Les décalages du capteur par rapport à la buse ayant été définis dans le fichier configuration.h, via :
+
+#define NOZZLE\_TO\_PROBE\_OFFSET { XXX, YYY, ZZZ }
+
+**Marlin 2.0.x ajustera automatiquement la surface de palpage de la sonde en fonction des décalages (offsets) précédents et du PROBING\_MARGIN défini pour les 4 côtés du lit.**
+
+Dans le dessin ci-dessus, le «PROBING\_MARGIN\_LEFT» ajoute le décalage X à la marge de «sécurité» automatiquement, idem pour le «PROBING\_MARGIN\_FRONT», pas besoin de faire le calcul :D
+
+Si l’on voulait utiliser des valeurs absolues au lieu du calcul automatique de Marlin, il faudrait alors les déclarer  explicitement en remplaçant la variable «PROBING\_MARGIN» par des valeurs entières puis décommenter la ligne pour qu’elle soit prise en compte lors de la compilation. Exemple :
+
+#if PROBE\_SELECTED && !IS\_KINEMATIC
+` `#define PROBING\_MARGIN\_LEFT 15
+` `//#define PROBING\_MARGIN\_RIGHT PROBING\_MARGIN
+` `#define PROBING\_MARGIN\_FRONT 25
+` `//#define PROBING\_MARGIN\_BACK PROBING\_MARGIN
+#endif
+
+C’est en tout cas ainsi que j’ai compris la manière dont Marlin gère l’espace de travail d’un capteur ABL (Auto Bed Leveling). J’ai peut-être compris de travers, si c’est le cas, n’hésitez pas à me le signaler.
