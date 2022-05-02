@@ -4,7 +4,7 @@ De nombreuses questions se posent régulièrement sur ce point.
 
 Ce sujet tente de faire le point sur la manière dont Marlin gère les emplacements du capteur de nivellement par rapport à la buse. [Le type de capteur](https://marlinfw.org/docs/configuration/probes.html#2.-probe-type) n'a pas d'importance, il peut s'agir d'un BLTouch (ou d’un clone / copie), d’un Touchmi, d'un capteur inductif, capacitif, …, tant que l’on est en mesure de déterminer le décalage de celui-ci par rapport à la buse (***ceci ne s’applique pas aux capteurs où la buse elle-même fait office de sonde (piezo, pression, …)***).
 
-Pour commencer, on suppose que la buse ne peut qu’atteindre la totalité de la surface du lit d’impression, sans espace supplémentaire. Ainsi les limites du plateau utilisées sont celles définies dans le fichier «*configuration.h*» à la section **[machine]** :
+Pour commencer, on suppose que la buse peut seulement atteindre la totalité de la surface du lit d’impression, sans espace supplémentaire. Ainsi les limites du plateau utilisées sont celles définies dans le fichier «*configuration.h*» à la section **[machine]** :
 
 ```
 // The size of the print bed
