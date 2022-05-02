@@ -41,53 +41,62 @@ Autre moyen de formater un support de stockage :
 - Tapez `format FS=FAT32  QUICK` (on peut préciser la taille du cluster avec UNIT=valeur MAIS Windows n’accepte pas de secteur de 4 ko avec le format FAT32 au-delà de 8 Go).
 - c'est fait. Partition de 16 Go en FAT32 sur une carte de plus grande capacité. 
 
-En images :
+## En images :
 
-![](images/cartesSD/002.jpeg) Liste des disques (bien choisir le «bon»)
+![](images/cartesSD/002.jpeg)
+Liste des disques (bien choisir le «bon»)
 
-![](images/cartesSD/003.jpeg) Liste des disques ou des volumes
+![](images/cartesSD/003.jpeg)
+Liste des disques ou des volumes
 
 ![](images/cartesSD/004.jpeg)
 
-Suppression du volume sélectionné
+### Suppression du volume sélectionné
 
 ![](images/cartesSD/005.jpeg)
 
-Création d’une partition
+### Création d’une partition
 
-![](images/cartesSD/006.jpeg) Formatage de la partition (impossible d’utiliser des secteurs de 4096 octets)
+![](images/cartesSD/006.jpeg)
+Formatage de la partition (impossible d’utiliser des secteurs de 4096 octets)
 
-![](images/cartesSD/007.jpeg) Liste des systèmes de fichiers disponibles et leurs capacités
+![](images/cartesSD/007.jpeg)
+Liste des systèmes de fichiers disponibles et leurs capacités
 
-![](images/cartesSD/008.jpeg) Quitter Diskpart
+![](images/cartesSD/008.jpeg)
+Quitter Diskpart
 
-Résultat :
+## Résultat :
 
 ![](images/cartesSD/009.jpeg)
 
-**Même en passant par la ligne de commande, on ne peut formater directement en FAT32 une partition supérieure à 8 Go avec une sectorisation en 4096 octets (la taille de secteur par défaut est de 16 ko.)**
+> **Même en passant par la ligne de commande, on ne peut formater directement en FAT32 une partition
+> supérieure à 8 Go avec une sectorisation en 4096 octets (la taille de secteur par défaut est de 16 ko.)**
 
 Plus d’informations sur Diskpart : [ici](https://www.commentcamarche.net/informatique/windows/25031-diskpart-gerer-les-disques-et-partitions-windows/) ou [là](https://docs.microsoft.com/fr-fr/windows-server/administration/windows-commands/diskpart).
 
-**Pour pouvoir formater une carte SD (μSD) ou une clé USB (ou un disque dur) de plus de 32 Go avec une sectorisation de 4096 octets (4 ko)**, on peut le faire mais il faut passer par un outil externe comme par exemple [AOMEI Partition Assistant](https://www2.aomeisoftware.com/download/pa/PAssist_Std.exe) en version «free» ou payante, la version freeware est suffisante avec des publicités ou rappels à passer à une version payante qui s’afficheront régulièrement.
+**Pour pouvoir formater une carte SD (μSD) ou une clé USB (ou un disque dur) de plus de 32 Go avec une sectorisation de 4096 octets (4 ko)**, on peut le faire mais il faut passer par un outil externe, par exemple [AOMEI Partition Assistant](https://www2.aomeisoftware.com/download/pa/PAssist_Std.exe) en version «free» ou payante, la version freeware est suffisante avec des publicités ou des rappels réguliers à passer à une version payante.
 
-![](images/cartesSD/010.jpeg) Sélectionner le disque à formater, puis un clic droit et choisir l’option «formater le disque»
+![](images/cartesSD/010.jpeg)
+Sélectionner le disque à formater, puis un clic droit et choisir l’option «formater le disque»
 
 ![](images/cartesSD/011.jpeg)
-
 Choisir le système de fichiers et la taille de sectorisation (cluster), là on peut choisir 4ko, valider par OK
-
 Cliquer sur l’opération en attente => Appliquer
 
-![](images/cartesSD/012.jpeg) Lire le récapitulatif puis cliquer «Exécuter»
+![](images/cartesSD/012.jpeg) 
+Lire le récapitulatif puis cliquer «Exécuter»
 
-![](images/cartesSD/013.jpeg) Appliquer les modifications
+![](images/cartesSD/013.jpeg)
+Appliquer les modifications
 
-![](images/cartesSD/014.jpeg) Confirmer
+![](images/cartesSD/014.jpeg)
+Confirmer
 
-![](images/cartesSD/015.jpeg) Après un certain temps, le formatage est terminé
+![](images/cartesSD/015.jpeg)
+Après un certain temps, le formatage est terminé
 
-Résultat dans l’explorateur :
+### Résultat dans l’explorateur :
 
 ![](images/cartesSD/016.jpeg)
 
