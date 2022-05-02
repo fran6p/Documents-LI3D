@@ -101,7 +101,7 @@ Quatre positions sont possibles pour le capteur (*une cinquième existe pour la 
 
 ![](images/ABL/002.jpeg)
 
-Le capteur peut atteindre les bords arrière et droite, les limites sont donc fixées par :
+Le capteur peut atteindre les bords arrière et droit, les limites sont donc fixées par :
 
 **Marlin 1.x :**
 
