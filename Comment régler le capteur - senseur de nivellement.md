@@ -201,14 +201,15 @@ où [XX] et [YY] sont les valeurs de décalage entre le détecteur de fin de cou
 Résultats des constantes de décalage pour une sonde à l’arrière-droit, exemple pour un **Marlin 1.x** :
 
 ```
-#define LEFT_PROBE_BED_POSITION (X_PROBE_OFFSET_FROM_EXTRUDER **+ X_MIN_POS** + MIN_PROBE_EDGE)
+#define LEFT_PROBE_BED_POSITION (X_PROBE_OFFSET_FROM_EXTRUDER + X_MIN_POS + MIN_PROBE_EDGE)
 #define RIGHT_PROBE_BED_POSITION (X_BED_SIZE - MIN_PROBE_EDGE)
-#define FRONT_PROBE_BED_POSITION (Y_PROBE_OFFSET_FROM_EXTRUDER **+ Y_MIN_POS** + MIN_PROBE_EDGE)
+#define FRONT_PROBE_BED_POSITION (Y_PROBE_OFFSET_FROM_EXTRUDER + Y_MIN_POS + MIN_PROBE_EDGE)
 #define BACK_PROBE_BED_POSITION (Y_BED_SIZE - MIN_PROBE_EDGE)
 ```
 
 Idem si la tête d'impression est capable de se déplacer plus loin sur l'axe X ou Y aux autres extrémités des axes, on pourra ***«augmenter»*** la taille maximale déclarée pour le plateau «*physique*». 
 Par exemple si la buse peut se déplacer de 20mm à droite et en arrière du plateau :
+
 ```
 #define X_MAX_POS X_BED_SIZE + 20
 #define Y_MAX_POS Y_BED_SIZE + 20
