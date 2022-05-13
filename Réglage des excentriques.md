@@ -27,20 +27,21 @@ Ces roues sont constituées:
  
 La qualité de ces roulements à billes peut parfois laisser à désirer et provoquer des surprises: «grognements» ou grippages.
 
-En prévention, il peut être intéressant d’avoir quelques roues de guidage d’avance… Bien vérifier les dimensions de celle-ci avant d'en commander car plusieurs dimensions existent. **Ne pas hésiter pas à les remplacer si on constate des points durs impossibles à supprimer lors des réglages**.
+En prévention, il peut être intéressant d’avoir quelques roues de guidage d’avance… Bien vérifier les dimensions de celle-ci avant d'en commander car plusieurs dimensions existent. ***Ne pas hésiter pas à les remplacer si on constate des points durs impossibles à supprimer lors des réglages***.
 
-Le bon réglage de l'appui de la roue sur le profilé est absolument nécessaire pour éviter de :
+**Le bon réglage de l'appui de la roue sur le profilé est absolument nécessaire** pour éviter de :
 
 - retransmettre tous les défauts du rail de guidage à l’impression,
 - avoir des soucis de déplacement (frein, point dur).
 
-Si la roue est insuffisamment plaquée contre le profilé, interstice existe entre la roue et le profilé, ce qui entraînera un jeu préjudiciable à la qualité d’impression: la partie mobile pourra se déplacer dans d'autres directions que celles voulues (jeu dans la tête d'impression, plateau «branlant», …)
+Si la roue est insuffisamment plaquée contre le profilé, un interstice existe entre la roue et le profilé, ce qui entraînera un jeu préjudiciable à la qualité d’impression: 
+> la partie mobile pourra se déplacer dans d'autres directions que celles voulues (jeu dans la tête d'impression, plateau «branlant», …)
 
 ![](images/Excentriques/galet-BAD-1.png) Trop plaquée
 ![](images/Excentriques/galet-BAD-2.png) Axe non perpendiculaire
 ![](images/Excentriques/galet-BAD-3.png) Pas assez plaquée
 
-Ce qu'il faut arriver à régler, consiste à trouver le bon compromis (ni trop, ni trop peu)…
+Ce qu'il faut arriver à régler, consiste à trouver le bon compromis (*ni trop, ni trop peu*)…
  
 ***Astuce*** :
 > En faisant tourner manuellement la roue en train d'être réglée, elle doit pouvoir tourner à «*frottement gras*».
@@ -66,3 +67,5 @@ Le plateau (Y) comporte 2 ou 3 excentriques, en fonction de la taille du dit pla
 Le chariot de la tête d’impression (tripode) sur l'axe X comporte un excentrique situé dessous, du côté du plateau:
 
 ![](images/Excentriques/excentrique-axe-X.png)
+
+:smiley:
