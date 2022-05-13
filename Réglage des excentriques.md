@@ -1,12 +1,15 @@
 # Réglage des excentriques (profilés Vslot)
 
-Chaque partie mobile de l’imprimante est dotée d'excentriques.
+**Chaque partie mobile de l’imprimante est dotée d'excentriques**:
 
-![](images/Excentriques/excentrique.jpeg)
+![](images/Excentriques/excentrique.jpg)
 
-Ces pièces supportent les roues en V 
+Les roues en V :
+
 ![](images/Excentriques/galet-roulement.png)
-Celles-ci viennent s’appuyer sur la structure en V des rails (profilés Vslot). 
+
+Celles-ci viennent s’appuyer sur la structure en V des rails (profilés Vslot):
+
 ![](images/Excentriques/profilé2020+galet-roulement.png)
 
 Le profilé en aluminium extrudé est utilisé pour guider les différents “chariots” (les parties mobiles) des axes :
