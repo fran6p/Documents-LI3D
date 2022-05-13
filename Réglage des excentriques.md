@@ -60,7 +60,7 @@ Les chariots Z (tripodes), de chaque côté de la potence, supportant l'axe X (t
 
 Le plateau (Y) comporte 2 ou 3 excentriques, en fonction de la taille du dit plateau, situés du même côté. Leur réglage permet à la fois de stabiliser le plateau et d'obtenir un déplacement en douceur, sans point dur:
 
-![](images/Excentriques/excentrique-axe-Y.png)
+![](images/Excentriques/excentriques-axe-Y.png)
 
 ## Tête d'impression
 
