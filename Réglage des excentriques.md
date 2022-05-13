@@ -1,8 +1,8 @@
 # Réglage des excentriques (profilés Vslot)
 
-**Chaque partie mobile de l’imprimante est dotée d'excentriques**.
+**Chaque partie mobile de l’imprimante est dotée d'excentriques**:
 
-![](images/Excentriques/excentrique.jpeg)
+![](images/Excentriques/excentrique.jpg)
 
 Les roues en V :
 
