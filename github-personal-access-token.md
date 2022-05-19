@@ -16,5 +16,5 @@ Il suffiasait ensuite de copier le token recopié du site Github dans la ligne �
 Avec la version 1.8.0, cette section «credentials» est désormais présente. Il suffit de se créer un «personal access tpken» via son propre compte Github et de copier sa valeur via l'interface d'Octoprint (Software Update > Settings (icone «clé»)) dans la ligne Github Acces Token puis de sauvegarder pour que cette modification soit prise en compte :smiley:
 
 
-![image](./images/Personal access tokens/1-compte-settings.jpg)
+![image](./images/Personal\ access\ tokens/1-compte-settings.jpg)
 
