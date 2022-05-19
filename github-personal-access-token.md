@@ -49,7 +49,7 @@ Avec la version 1.8.0, cette section «`credentials`» est désormais présente 
   
  ![image](./images/Personal_access_tokens/6-new-personal-access-token_2.jpg)
   
- 8 Une fois celui-ci généré, le copier (et coller dans un fichier texte en sauvegarde car on ne pourra plus le réafficher) et le coller l§ où on l'utilisera (fichier `config.yaml` ou champ de saisie directement dans Octoprint si version ⩾ 1.8.0 :
+ 8 Une fois celui-ci généré, le copier (et coller dans un fichier texte en sauvegarde car on ne pourra plus le réafficher) et le coller là où on l'utilisera (fichier `config.yaml` ou champ de saisie directement dans Octoprint si version ⩾ 1.8.0) :
   
  ![image](./images/Personal_access_tokens/7-personal-access-token-généré.jpg)
  
