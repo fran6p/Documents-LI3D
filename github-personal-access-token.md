@@ -17,7 +17,7 @@ Avant la version 1.8.0 d'Octoprint (1.7.3), il fallait ensuite manuellement alle
  
 Il suffisait ensuite de copier le token recopié du site Github dans la ligne «`github: `», de redémarrer Octoprint pour ne plus être limité lors de mises à jour :smirk:
 
-Avec la version 1.8.0, cette section «`credentials`» est désormais présente dans le fichier `config.yam/l`. Il suffit de se créer un «personal access token» via son propre compte Github et de copier sa valeur via l'interface d'Octoprint (`Software Update > Settings ` (**icone «clé»**)) dans la ligne `Github Acces Token` puis de sauvegarder pour que cette modification soit prise en compte :smiley:
+Avec la version 1.8.0, cette section «`credentials`» est désormais présente dans le fichier `config.yam/l`. Il suffit de se créer un «personal access token» via son propre compte Github et de copier sa valeur via l'interface d'Octoprint (`Software Update > Settings ` (**l'icone représenté par une «clé»**)) dans la ligne `Github Acces Token` puis de sauvegarder pour que cette modification soit prise en compte :smiley:
 
 ![image](./images/Personal_access_tokens/octo-plugin-conf-software-update-Github-access-token.jpg)
 
