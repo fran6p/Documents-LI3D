@@ -68,7 +68,7 @@ ceci créera le fichier initial `messages.pot`.
 
 ## babel_pack --locale=<locale> [ --author=<author> ]
 
-> Empaquette la traduction pour la locale `<locale>` comme avec un pack linguistique installable manuellement par les utilisateurs de l'extension. Ceci est intéressant pour les langues que **vous ne pouvez pas garantir de maintenir à jour vous-même** à chaque nouvelle version de votre extension et pour lesquelles vous devez *dépendre de contributeurs*.
+> Empaquette la traduction pour la locale `<locale>`, comme pour un pack linguistique, cette traduction est installable manuellement par les utilisateurs de l'extension. Ceci est intéressant pour les langues que **vous ne pouvez pas garantir de maintenir à jour vous-même** à chaque nouvelle version de votre extension et pour lesquelles vous devez *dépendre de contributeurs*.
 
 Si vous voulez regrouper les traductions avec votre extension, créez un nouveau dossier **`octoprint_nom-extension/translations`**. Lorsque ce dossier existe, une commande supplémentaire devient disponible :
 
