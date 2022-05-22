@@ -12,7 +12,9 @@ source venv/bin/activate
 pip install -e . [develop]
 ```
 
-Le **fichier modèle** PO se trouve sous **translations/messages.pot**, le fichier PO de chaque langue se trouve sous **translations/'code de langue'/LC_MESSAGES/messages.po**. 
+Le **fichier modèle** PO se trouve sous **translations/messages.pot**.
+
+Le fichier PO de chaque langue se trouve sous **translations/'code de langue'/LC_MESSAGES/messages.po**. 
 
 Avant de commencer une traduction, s'assurer que le fichier modèle PO (**.pot**) est à jour et que les fichiers PO sont mis à jour en conséquence.
 
