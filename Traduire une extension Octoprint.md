@@ -12,7 +12,7 @@ source venv/bin/activate
 pip install -e . [develop]
 ```
 
-Le **fichier modèle** PO se trouve sous **translations/messages.pot**, le fichier PO de chaque langue se trouve sous **translations/<code de langue>/LC_MESSAGES/messages.po**. 
+Le **fichier modèle** PO se trouve sous **translations/messages.pot**, le fichier PO de chaque langue se trouve sous **translations/'code de langue'/LC_MESSAGES/messages.po**. 
 
 Avant de commencer une traduction, s'assurer que le fichier modèle PO (**.pot**) est à jour et que les fichiers PO sont mis à jour en conséquence.
 
@@ -22,20 +22,20 @@ Le fichier **setup.py** fourni prend en charge quelques commandes supplémentair
 
 `python setup.py babel_refresh`
 
-3 Effectuer une nouvelle extraction de toutes les chaînes traduisibles depuis la source de l’extension et mettre à jour tous les fichiers PO. De là, il sera possible d'éditer la traduction dans la langue souhaitée. Si celle-ci n'est pas encore disponible, la créer via
+3 Effectuer une nouvelle extraction de toutes les chaînes traduisibles depuis la source de l’extension et mettre à jour tous les fichiers PO. De là, il sera possible d'éditer la traduction dans la langue souhaitée. Si celle-ci n'est pas encore disponible, la créer via :
 
 `python setup.py babel_new --locale=<locale>`
 
-4 Vérifier de temps en temps la traduction en cours. Pour ce faire, compiler les traductions dans leurs équivalents MO et JS et les "regroupez" avec l’extension:
+4 Vérifier de temps en temps la traduction en cours. Pour ce faire, compiler les traductions dans leurs équivalents MO et JS et les "regroupez" avec l’extension :
 
 ```
 python setup.py babel_compile
 python setup.py babel_bundle --locale=<locale>
 ```
 
-5 Démarrer OctoPrint (octoprint serve), regarder les résultats de la traduction. Pour demander une locale spécifique pour l'affichage de l'interface utilisateur, ajouter le paramètre de requête **l10n** avec la locale désirée à l'URL d'OctoPrint, exemple :
+5 Démarrer OctoPrint (**`octoprint serve`**), regarder les résultats de la traduction. Pour demander une locale spécifique pour l'affichage de l'interface utilisateur, ajouter le paramètre de requête **l18n** avec la locale désirée à l'URL d'OctoPrint, exemple :
 
-http://localhost:5000/?l10n=fr
+http://localhost:5000/?l18n=fr
 
 Il est également possible de sélectionner cette langue dans les paramètres "**Apparence**" d'OctoPrint ou dans les paramètres utilisateur de votre navigateur.
 
