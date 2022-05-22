@@ -5,8 +5,8 @@
 1 Cloner l’extension pour OctoPrint et entrer dans le répertoire créé:
 
 ```
-git clone https://github.com/Octoprint-nom-extension/Octoprint-nom-extension .git
-cd Octoprint-nom-extension
+git clone https://github.com/pseudo-github-auteur/Octoprint_nom-extension.git
+cd Octoprint_nom-extension
 virtualenv venv
 source venv/bin/activate
 pip install -e . [develop]
