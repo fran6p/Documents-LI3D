@@ -47,32 +47,32 @@ Les traductions de l'extension (plugin) sont placées dans le dossier «**transl
 
 ## babel_extract
 
-    Extrait tous les messages *traduisibles* , marqués avec
-
-- `_("...")` de Jinja ou
-- `gettext("...")` de JavaScript)
+> Extrait tous les messages *traduisibles* , marqués avec
+> 
+> - `_("...")` de Jinja ou
+> -  `gettext("...")` de JavaScript)
 
 ceci créera le fichier initial `messages.pot`.
 
 ## babel_refresh
 
-    Relance l'extraction et met à jour le fichier `messages.pot`.
+> Relance l'extraction et met à jour le fichier `messages.pot`.
 
 ## babel_new --locale=<locale>
 
-    Crée un nouveau dossier de traduction pour la locale `<locale>`.
+> Crée un nouveau dossier de traduction pour la locale `<locale>`.
 
 ## babel_compile
 
-    Compile les traductions en fichiers `mo`, prêts à être utilisés dans OctoPrint.
+> Compile les traductions en fichiers `mo`, prêts à être utilisés dans OctoPrint.
 
 ## babel_pack --locale=<locale> [ --author=<author> ]
 
-    Empaquette la traduction pour la locale `<locale>` comme un pack linguistique installable qui peut être installé manuellement par les utilisateurs de l'extension. Ceci est intéressant pour les langues que vous ne pouvez pas garantir de maintenir à jour vous-même à chaque nouvelle version de votre extension et pour lesquelles vous devez dépendre de contributeurs.
+> Empaquette la traduction pour la locale `<locale>` comme un pack linguistique installable qui peut être installé manuellement par les utilisateurs de l'extension. Ceci est intéressant pour les langues que vous ne pouvez pas garantir de maintenir à jour vous-même à chaque nouvelle version de votre extension et pour lesquelles vous devez dépendre de contributeurs.
 
 Si vous voulez regrouper les traductions avec votre extension, créez un nouveau dossier `octoprint_nom-extension/translations`. Lorsque ce dossier existe, une commande supplémentaire devient disponible :
 
 ## babel_bundle --locale=<locale>
 
-    Déplace la traduction de la locale `<locale>` vers octoprint_nom-extension/translations, en l'intégrant à votre extension. C'est intéressant avec les langues dont vous pouvez garantir le maintien à jour par vous-même pour chaque nouvelle version de votre extension.
+> Déplace la traduction de la locale `<locale>` vers octoprint_nom-extension/translations, en l'intégrant à votre extension. C'est intéressant avec les langues dont vous pouvez garantir le maintien à jour par vous-même pour chaque nouvelle version de votre extension.
 
