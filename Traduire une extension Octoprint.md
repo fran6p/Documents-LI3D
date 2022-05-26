@@ -28,7 +28,7 @@ Le fichier **setup.py** fourni prend en charge quelques commandes supplémentair
 
 `python setup.py babel_new --locale=<locale>`
 
-4 Vérifier de temps en temps la traduction en cours. Pour ce faire, compiler les traductions dans leurs équivalents MO et JS et les "regroupez" avec l’extension :
+4 Vérifier de temps en temps la traduction en cours. Pour ce faire, compiler les traductions dans leurs équivalents MO et JS et les "regrouper" avec l’extension :
 
 ```
 python setup.py babel_compile
@@ -39,7 +39,7 @@ python setup.py babel_bundle --locale=<locale>
 
 http://localhost:5000/?l18n=fr
 
-Il est également possible de sélectionner cette langue dans les paramètres "**Apparence**" d'OctoPrint ou dans les paramètres utilisateur de votre navigateur.
+Il est également possible de sélectionner cette langue dans les paramètres "**Apparence**" (*Appearance*) d'OctoPrint ou encore dans les paramètres utilisateur de votre navigateur.
 
 # BABEL readme
 
